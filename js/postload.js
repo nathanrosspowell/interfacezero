@@ -1,37 +1,34 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function tableForJson( myJ ) {
-    var x = [];
-    x.push('<div class="panel panel-default">');
-    x.push('  <div class="panel-heading">');
-    x.push('    <h3 class="panel-title">'+myJ["id"]["name"]+'</h3>');
-    x.push('  </div>');
-    x.push('  <div class="panel-body">');
-    x.push("     Race: " + myJ["id"]["race"] + "<br/>" );
-    x.push("     Occupation: " + myJ["id"]["occupation"] + "<br/>" );
-    x.push('   </div>');
-    x.push('</div>');
+    var x = "";
+    x += '<div class="panel panel-default">';
+    x += '  <div class="panel-heading">';
+    x += '    <h3 class="panel-title">'+myJ["id"]["name"]+'</h3>';
+    x += '  </div>';
+    x += '  <div class="panel-body">';
+    x += '     Race: ' + myJ["id"]["race"] + '<br/>';
+    x += '     Occupation: ' + myJ["id"]["occupation"] + '<br/>';
+    x += '   </div>';
+    x += '</div>';
     $.each(myJ["skills"],function(key,value){
-        x.push('<ul class="list-group">')
-        x.push('  <li class="list-group-item">');
-        x.push('    <span class="badge">' + value["value"] + '</span>');
-        x.push(     key );
-        x.push('  </li>');
-        x.push('  <li class="list-group-item">');
+        x += '<ul class="list-group">')
+        x += '  <li class="list-group-item">';
+        x += '    <span class="badge">' + value["value"] + '</span>';
+        x +=      key;
+        x += '  </li>';
+        x += '  <li class="list-group-item">';
         $.each(value["skills"],function(key,value){
-            x.push('<ul class="list-group">')
-            x.push('  <li class="list-group-item">');
-            x.push('    <span class="badge">' + value + '</span>');
-            x.push(     key );
-            x.push('  </li>');
-            x.push('</ul>');
+            x += '<ul class="list-group">')
+            x += '  <li class="list-group-item">';
+            x += '    <span class="badge">' + value + '</span>';
+            x +=      key;
+            x += '  </li>';
+            x += '</ul>';
         });
-        x.push('  </li>');
-        x.push('</ul>');
+        x += '  </li>';
+        x += '</ul>';
     });
-    x.forEach(function(line){
-        $("#interfacezero-main").append(line)
-    });
-
+    $("#interfacezero-main").append(x)
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $(window).bind("load", function() {
