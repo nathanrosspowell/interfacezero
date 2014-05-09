@@ -48,7 +48,7 @@ function tableForJson( name, myJ ) {
         x += '        </a>';
         x += '      </h4>';
         x += '    </div>';
-        x += '    <div id="' + accordionAnchor + '" class="panel-collapse collapse in">';
+        x += '    <div id="' + accordionAnchor + '" class="panel-collapse collapse">';
         x += '      <div class="panel-body">';
         
         $.each(value["skills"],function(key,value){
