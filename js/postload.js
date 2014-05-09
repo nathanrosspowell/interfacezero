@@ -8,7 +8,8 @@ function tableForJson( myJ ) {
     x += '  <div class="panel-body">';
     x += '     Race: ' + myJ["id"]["race"] + '<br/>';
     x += '     Occupation: ' + myJ["id"]["occupation"] + '<br/>';
-    x += '   </div>';
+    x += '  </div>';
+    x += '  <div class="panel panel-default">';
     $.each(myJ["skills"],function(key,value){
         x += '<ul class="list-group">';
         x += '  <li class="list-group-item">';
@@ -27,6 +28,7 @@ function tableForJson( myJ ) {
         x += '  </li>';
         x += '</ul>';
     });
+    x += '  </div>';
     x += '</div>';
     $("#interfacezero-main").append(x)
 }
