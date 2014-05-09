@@ -52,7 +52,7 @@ function tableForJson( myJ ) {
         x += '  <div class="panel panel-default">';
         x += '    <div class="panel-heading">';
         x += '      <h4 class="panel-title">';
-        x += '        <a data-toggle="collapse" data-parent="#"' + accordion + '"" href="#' + accordionAnchor + ">';
+        x += '        <a data-toggle="collapse" data-parent="#"' + accordion + '"" href="#' + accordionAnchor + '">';
         x += '          Collapsible Group Item #1';
         x += '        </a>';
         x += '      </h4>';
