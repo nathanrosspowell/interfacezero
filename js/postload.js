@@ -20,13 +20,15 @@ function tableForJson( myJ ) {
     x += '    <th>Money</th>';
     x += '  </tr></thead>';
     x += '  <tbody>';
-    x += '    <tr><td>' + myJ["stats"]["xp"] + '</td></tr>';
-    x += '    <tr><td>' + myJ["id"]["race"] + '</td></tr>';
-    x += '    <tr><td>' + myJ["id"]["occupation"] + '</td></tr>';
-    x += '    <tr><td>' + myJ["stats"]["streetcreed"]["current"] + '/' + myJ["stats"]["streetcreed"]["max"] +' </td></tr>';
-    x += '    <tr><td>' + myJ["stats"]["wonded"] + '</td></tr>';
-    x += '    <tr><td>' + myJ["stats"]["exhausted"] + '</td></tr>';
-    x += '    <tr><td>' + myJ["stats"]["money"] + '</td></tr>';
+    x += '    <tr>';
+    x += '      <td>' + myJ["stats"]["xp"] + '</td>';
+    x += '      <td>' + myJ["id"]["race"] + '</td>';
+    x += '      <td>' + myJ["id"]["occupation"] + '</td>';
+    x += '      <td>' + myJ["stats"]["streetcreed"]["current"] + '/' + myJ["stats"]["streetcreed"]["max"] +' </td>';
+    x += '      <td>' + myJ["stats"]["wonded"] + '</td>';
+    x += '      <td>' + myJ["stats"]["exhausted"] + '</td>';
+    x += '      <td>' + myJ["stats"]["money"] + '</td>';
+    x += '    </tr>';
     x += '  </tbody>';
     x += '</table>';
         
