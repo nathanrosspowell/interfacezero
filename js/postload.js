@@ -48,5 +48,18 @@ $(window).bind("load", function() {
             }
         });
     });
+    
+    function newWin(){ 
+win= window.open('','_blank'); 
+
+var results =document.documentElement.innerHTML; 
+var match = "<"; 
+
+var re = new RegExp("<", "g"); 
+
+var newresults = results.replace(re, "&lt;"); 
+
+win.document.write(newresults ); 
+} 
 });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
