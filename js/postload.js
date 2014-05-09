@@ -11,14 +11,14 @@ function tableForJson( myJ ) {
     x += '   </div>';
     x += '</div>';
     $.each(myJ["skills"],function(key,value){
-        x += '<ul class="list-group">')
+        x += '<ul class="list-group">';
         x += '  <li class="list-group-item">';
         x += '    <span class="badge">' + value["value"] + '</span>';
         x +=      key;
         x += '  </li>';
         x += '  <li class="list-group-item">';
         $.each(value["skills"],function(key,value){
-            x += '<ul class="list-group">')
+            x += '<ul class="list-group">';
             x += '  <li class="list-group-item">';
             x += '    <span class="badge">' + value + '</span>';
             x +=      key;
