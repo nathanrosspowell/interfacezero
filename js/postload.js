@@ -11,7 +11,7 @@ function tableForJson( myJ ) {
     x += '      <div class="col-md6">Occupation:' + myJ["id"]["occupation"] + '</div>';
     x += '    </div>';
     x += '  </div>'; // Close panel-body
-    x += '  <div class="span4">';
+    x += '  <div class="well well-small">';
     $.each(myJ["skills"],function(key,value){
         x += '<ul class="list-group">';
         x += '  <li class="list-group-item">';
