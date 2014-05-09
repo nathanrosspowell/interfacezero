@@ -81,7 +81,7 @@ $(window).bind("load", function() {
             url: 'yaml/' + yamlFile + '.yaml',
             async: false,
             success: function (data){
-                tableForJson(jsyaml.load(yamlFile,data));
+                tableForJson(yamlFile,jsyaml.load(data));
             }
         });
     });
