@@ -3,7 +3,7 @@ function tableForJson( myJ ) {
     var x = "";
     x += '<div class="panel panel-default">';
     x += '  <div class="panel-heading">';
-    x += '    <h3 class="panel-title">'+myJ["id"]["name"]+'</h3>';
+    x += '    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span>'+myJ["id"]["name"]+'</h3>';
     x += '  </div>';
     x += '  <div class="panel-body">';
     x += '    <div class="row">';
@@ -16,7 +16,7 @@ function tableForJson( myJ ) {
         x += '<ul class="list-group">';
         x += '  <li class="list-group-item">';
         x += '    <span class="badge">' + value["value"] + '</span>';
-        x +=      key;
+        x +  '    <span class="glyphicon glyphicon-user"></span>' + key;
         x += '  </li>';
         x += '  <li class="list-group-item">';
         x += '  <div class="panel panel-default">';
