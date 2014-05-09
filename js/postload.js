@@ -3,7 +3,7 @@ function tableForJson( myJ ) {
     var x = "";
     x += '<div class="panel panel-default">';
     x += '  <div class="panel-heading">';
-    x += '    <h3 class="panel-title">'+myJ["id"]["name"]+'</h3>';
+    x += '    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span>'+myJ["id"]["name"]+'</h3>';
     x += '  </div>';
     x += '  <div class="panel-body">';
     x += '    <div class="row">';
