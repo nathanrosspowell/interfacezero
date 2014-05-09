@@ -73,7 +73,7 @@ function tableForJson( name, myJ ) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $(window).bind("load", function() {
     var yamlFiles = [
-          'trigger_finger''
+          'trigger_finger'
         , 'derp_man'
     ];
     yamlFiles.forEach( function(yamlFile){
