@@ -6,8 +6,8 @@ function tableForJson( myJ ) {
     x.push('    <h3 class="panel-title">'+myJ["id"]["name"]+'</h3>');
     x.push('  </div>');
     x.push('  <div class="panel-body">');
-    x.push("     Race: " + myJ["id"]["race"] + "<br\>" );
-    x.push("     Occupation: " + myJ["id"]["occupation"] + "<br\>" );
+    x.push("     Race: " + myJ["id"]["race"] + "<br/>" );
+    x.push("     Occupation: " + myJ["id"]["occupation"] + "<br/>" );
     x.push('   </div>');
     x.push('</div>');
     $.each(myJ["skills"],function(key,value){
