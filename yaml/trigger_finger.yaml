@@ -1,0 +1,163 @@
+---
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~id
+id:
+    name: "Tyrone 'Trigger Finger' Farrel"
+    race: Human
+    occupation: Programmer
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~stats
+stats:
+    rank: 1
+    income: 0c
+    streetcreed:
+        current: 2
+        max: 3
+    xp: 13
+    wonded: -2
+    money: 6350c
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~skills
+skills:
+    exhausted: 0
+    agility:
+        value: 6
+        skills:
+            driving: 4
+            lockpicking: 6
+            shooting: 6
+            stealth: 6
+    smarts:
+        value : 8
+        skills:
+            hacking: 10
+            notice: 4
+            streetwise: 6
+            programming: 8
+    strength:
+        value: 6
+        skills: {}
+    vigor:
+        value: 6
+        skills : {}
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~attribuets
+attributes:
+    pace: 0
+    running: 0
+    parry: 2
+    tough: 5
+    armour: 3
+    charisma: 0
+    guts: 0
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~tap
+tap:
+    firewall: 7
+    toughness: 1
+    ams: 0
+    armour: 0
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~edges
+edges:
+    cutter: "+1 hacking firewalls"
+    interface: "+tap firewall"
+    hacker: "if hacking a corp get bonus key information"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hinderances
+hinderances:
+    code of honor: "major hinderence"
+    bad repuration: "people know thing went bad"
+    black listed: "a corp doesn't like you. (Not chimera)"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~augments
+augments:
+    data carrier: "offline HDD"
+    subdermal armour: "under the skin armour"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~gear
+gear:
+    - name: "bounty board" 
+      info: "list of known fugitives"
+      cost: "400/cpm"
+    - name: "e-stream" 
+      info: "entertainment"
+      cost: "50/cpm"
+    - name: "swapper protect"
+      info: "+1 firewall"
+      cost: "950/cpm"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~armaments
+armaments:
+    - name: "urban punk 45acp smg"
+      damage: "2d6+1"
+      weight: 3
+    - name: "urban punk shillelagh hack stick"
+      damage: "2d10"
+      weight: 2
+    - name: "Flashbang"
+      damage: "2d10"
+      weight: 0
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~augmentations
+augmentations:
+    - name: "data carrier"
+      stain: 1
+    - name: "subdermal armour"
+      strain: 1
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~misc gear
+misc gear:
+    - name: "harley motorcycle"
+      info: "1d4 driving AI"
+    - name: "medium cal ammo"
+      info: "a normal amount"
+    - name: "mesh id jammer"
+      info: "anarchy symbol, needs battery"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~protection
+protection:
+    torso: "urban punk combat jacket"
+    head: {}
+    arm: {}
+    life support: {}
+    leg: {}
+    hazard sheild: {}
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~spending
+spending:
+    save kado:
+        earning: 
+            - 5000c - progress
+            - 3750c - bounty
+            - 550c - sales
+        spending:
+            - 950c - apps
+            - 1500c - hack stick
+            - 1500c - cost of living
+            - 1 street cred calling grips
+    kill BuzzKill:
+        earning:
+            - 5000c progress
+        spending:
+            - 300c normal suit
+            - 1 street cred calling grips
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~notes
+notes:
+    save kado:
+        - "shot security cameras"
+        - "didn't kill anyone"
+        - "untied kado"
+    kill BuzzKill:
+        - "hacked BuzzKills building"
+        - "programmed face recognition tech"
+        - "heard of 'basalisc hack' making people go katatonic on the subway"
+        - "house got rigged with a 'slaymore'"
+        - "lost Shelia"
+        - "gut damage -1 dice to agility"
+        - "Missing nipple - compliments of the late BuzzKill"
+        - "download BuzzKills tap info to HDD"
+        - "Dr Cheng fixed me up, fixed gut damage"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
