@@ -1,19 +1,4 @@
-
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-</div>
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function tableForJson( myJ ) {
     var x = "";
     x += '<div class="panel panel-default">';
