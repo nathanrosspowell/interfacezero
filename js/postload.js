@@ -17,6 +17,7 @@ function tableForJson( myJ ) {
         x +=      key;
         x += '  </li>';
         x += '  <li class="list-group-item">';
+        x += '  <div class="panel panel-default">';
         $.each(value["skills"],function(key,value){
             x += '<ul class="list-group">';
             x += '  <li class="list-group-item">';
@@ -25,6 +26,7 @@ function tableForJson( myJ ) {
             x += '  </li>';
             x += '</ul>';
         });
+        x += '  </div>';
         x += '  </li>';
         x += '</ul>';
     });
