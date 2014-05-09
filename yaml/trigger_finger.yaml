@@ -9,7 +9,7 @@ id:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~stats
 stats:
     rank: 1
-    income: 0c
+    income: 9999999c
     streetcreed:
         current: 2
         max: 3
