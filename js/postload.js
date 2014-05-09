@@ -39,21 +39,13 @@ function tableForJson( myJ ) {
     x += '    <div class="panel-group" id="' + accordion + '">';
     $.each(myJ["skills"],function(key,value){
         var accordionAnchor = name + "-" + key;
-        x += '<ul class="list-group">';
-        x += '  <li class="list-group-item">';
-        x += '    <span class="badge">' + value["value"] + '</span>';
-        x += '    <span class="glyphicon glyphicon-stat"></span>' + key;
-        x += '  </li>';
-        x += '  <li class="list-group-item">';
-        
-        
-        
         x += '<div class="panel-group" id="' + accordion + '">';
         x += '  <div class="panel panel-default">';
         x += '    <div class="panel-heading">';
         x += '      <h4 class="panel-title">';
         x += '        <a data-toggle="collapse" data-parent="#"' + accordion + '"" href="#' + accordionAnchor + '">';
-        x += '          Collapsible Group Item #1';
+        x += '          <span class="badge">' + value["value"] + '</span>';
+        x += '          <span class="glyphicon glyphicon-stat"></span>' + key;
         x += '        </a>';
         x += '      </h4>';
         x += '    </div>';
@@ -73,9 +65,6 @@ function tableForJson( myJ ) {
         x += '    </div>';
         x += '  </div>';
         x += '</div>';
-        
-        x += '  </li>';
-        x += '</ul>';
     });
     x += '    </div>'; // Accordian
     x += '  </div>'; // Well
