@@ -1,10 +1,9 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function tableForJson( myJ ) {
+function tableForJson( name, myJ ) {
     var x = "";
-    var name = myJ["id"]["name"];
     x += '<div class="panel panel-default">';
     x += '  <div class="panel-heading">';
-    x += '    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span>'+name+'</h3>';
+    x += '    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span>'+myJ["id"]["name"]+'</h3>';
     x += '  </div>'; // Close panel-heading
     x += '  <div class="panel-body">';
     
@@ -74,15 +73,15 @@ function tableForJson( myJ ) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $(window).bind("load", function() {
     var yamlFiles = [
-          'yaml/trigger_finger.yaml'
-        , 'yaml/derp_man.yaml'
+          'trigger_finger''
+        , 'derp_man'
     ];
     yamlFiles.forEach( function(yamlFile){
         $.ajax({
-            url: yamlFile,
+            url: 'yaml/' + yamlFile + '.yaml',
             async: false,
             success: function (data){
-                tableForJson(jsyaml.load(data));
+                tableForJson(jsyaml.load(yamlFile,data));
             }
         });
     });
