@@ -8,7 +8,7 @@ function tableForJson( myJ ) {
     x += '  <div class="panel-body">';
     
     
-    x += '<table class="table table-condensed">';
+    x += '<div class="table-responsive"><table class="table table-condensed">';
     x += '  <colgroup><col class="col-xs-1"><col class="col-xs-7"></colgroup>';
     x += '  <thead><tr>';
     x += '    <th>XP</th>';
@@ -30,7 +30,7 @@ function tableForJson( myJ ) {
     x += '      <td>' + myJ["stats"]["money"] + '</td>';
     x += '    </tr>';
     x += '  </tbody>';
-    x += '</table>';
+    x += '</table></div>';
     
     x += '  </div>'; // Close panel-body
     x += '  <div class="well well-small">';
