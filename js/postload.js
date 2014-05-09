@@ -16,7 +16,7 @@ function tableForJson( myJ ) {
         x += '<ul class="list-group">';
         x += '  <li class="list-group-item">';
         x += '    <span class="badge">' + value["value"] + '</span>';
-        x +=      key;
+        x += '    <span class="glyphicon glyphicon-stat"></span>' + key;
         x += '  </li>';
         x += '  <li class="list-group-item">';
         x += '  <div class="panel panel-default">';
