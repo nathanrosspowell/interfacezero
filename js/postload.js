@@ -1,3 +1,18 @@
+
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+</div>
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function tableForJson( myJ ) {
     var x = "";
@@ -6,8 +21,10 @@ function tableForJson( myJ ) {
     x += '    <h3 class="panel-title">'+myJ["id"]["name"]+'</h3>';
     x += '  </div>';
     x += '  <div class="panel-body">';
-    x += '     Race: ' + myJ["id"]["race"] + '<br/>';
-    x += '     Occupation: ' + myJ["id"]["occupation"] + '<br/>';
+    x += '    <div class="row">';
+    x += '      <div class="col-md6">Race:' + myJ["id"]["race"] + '</div>';
+    x += '      <div class="col-md6">Occupation:' + myJ["id"]["occupation"] + '</div>';
+    x += '    </div>';
     x += '  </div>';
     x += '  <div class="panel panel-default">';
     $.each(myJ["skills"],function(key,value){
