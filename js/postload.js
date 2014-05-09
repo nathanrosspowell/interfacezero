@@ -69,6 +69,7 @@ function tableForJson( name, myJ ) {
     x += '  </div>'; // Well
     x += '</div>'; // Close Panel
     $("#interfacezero-main").append(x)
+    $('#'+accordion).collapse("hide"); // Close that accordion
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $(window).bind("load", function() {
