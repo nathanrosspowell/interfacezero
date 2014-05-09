@@ -4,14 +4,14 @@ function tableForJson( myJ ) {
     x += '<div class="panel panel-default">';
     x += '  <div class="panel-heading">';
     x += '    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span>'+myJ["id"]["name"]+'</h3>';
-    x += '  </div>';
+    x += '  </div>'; // Close panel-heading
     x += '  <div class="panel-body">';
     x += '    <div class="row">';
     x += '      <div class="col-md6">Race:' + myJ["id"]["race"] + '</div>';
     x += '      <div class="col-md6">Occupation:' + myJ["id"]["occupation"] + '</div>';
     x += '    </div>';
-    x += '  </div>';
-    x += '  <div class="panel panel-default">';
+    x += '  </div>'; // Close panel-body
+    x += '  <div class="well well-small">';
     $.each(myJ["skills"],function(key,value){
         x += '<ul class="list-group">';
         x += '  <li class="list-group-item">';
@@ -33,7 +33,7 @@ function tableForJson( myJ ) {
         x += '</ul>';
     });
     x += '  </div>';
-    x += '</div>';
+    x += '</div>'; // Close Panel
     $("#interfacezero-main").append(x)
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
