@@ -11,6 +11,7 @@ function createCharacterPanel( name, myJ ){
     x += '  <div class="panel-body">';
     x += '    <div class="well well-small">';
     x +=        idTable( name, myJ );
+    x +=        tapTable( name, myJ );
     x +=        statsAccordion( name, myJ );
     x += '    </div>';
     x += '  </div>';
@@ -22,7 +23,6 @@ function idTable( name, myJ ){
     var x = "";
     x += '<div class="table-responsive">';
     x += '  <table class="table table-condensed">';
-    //x += '    <colgroup><col class="col-xs-1"><col class="col-xs-7"></colgroup>';
     x += '    <thead>';
     x += '      <tr>';
     x += '        <th>XP</th>';
@@ -49,6 +49,32 @@ function idTable( name, myJ ){
     x += '</div>';
     return x;
 }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function tapTable( name, myJ ){
+    var x = "";
+    x += '<div class="table-responsive">';
+    x += '  <table class="table table-condensed">';
+    x += '    <thead>';
+    x += '      <tr>';
+    x += '        <th>Firewall</th>';
+    x += '        <th>Toughness</th>';
+    x += '        <th>AMS</th>';
+    x += '        <th>Armour</th>';
+    x += '      </tr>';
+    x += '    </thead>';
+    x += '    <tbody>';
+    x += '      <tr>';
+    x += '        <td>' + myJ["tap"]["firewall"] + '</td>';
+    x += '        <td>' + myJ["tap"]["toughness"] + '</td>';
+    x += '        <td>' + myJ["tap"]["ams"] + '</td>';
+    x += '        <td>' + myJ["tap"]["armour"] + '</td>';
+    x += '    </tr>';
+    x += '    </tbody>';
+    x += '  </table>';
+    x += '</div>';
+    return x;
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function accordionName( name ){
     return name + "-accordion";
 }
