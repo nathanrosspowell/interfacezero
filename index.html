@@ -30,7 +30,7 @@
     <![endif]-->
   </head>
 
-  <body data-spy="scroll" data-target=".navbar">
+  <body data-spy="scroll" data-target="#scrollspy-navbar">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -47,37 +47,12 @@
           </button>
           <a class="navbar-brand" href="#">Interface Zero</a>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Char 1<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Identity</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Stats</li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Weapons</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Back story</li>
-                <li><a href="#">Campaigns</a></li>
-                <li><a href="#">Notes</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Char 2<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Identity</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Stats</li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Weapons</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Back story</li>
-                <li><a href="#">Campaigns</a></li>
-                <li><a href="#">Notes</a></li>
-              </ul>
-            </li>
-          </ul>
+        <div class="navbar-collapse collapse" >
+          <div id="scrollspy-navbar">
+            <ul class="nav navbar-nav" id="interfacezero-navbar">
+                <!-- JS populates this -->
+            </ul>
+          </div>
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="./">Refresh</a></li>
           </ul>
