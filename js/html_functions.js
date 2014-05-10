@@ -203,21 +203,3 @@ function addHtmlForYaml( name, myJ ) {
     $("#interfacezero-navbar").append(dropdown);
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// This is what executes
-$(window).bind("load", function() {
-    var yamlFiles = [
-          'trigger_finger'
-        , 'derp_man'
-    ];
-    yamlFiles.forEach( function(yamlFile){
-        $.ajax({
-            url: 'yaml/' + yamlFile + '.yaml',
-            async: false,
-            success: function (data){
-                addHtmlForYaml(yamlFile,jsyaml.load(data));
-            }
-        });
-    });
-    $("body").scrollspy();
-});
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
