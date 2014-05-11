@@ -38,11 +38,57 @@ function makeHeading( text ){
    return "<h3>" + text + "</h3>";
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function makeModal( id, button, title, content ){
+function title( text ){
+   return text.toLowerCase().replace(/\b[a-z]/g,function(letter){
+        return letter.toUpperCase();
+   });
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function makeTable( headings, itemsFunction, useStripes ){
+    var stripe = typeof useStripes !== 'undefined' ? useStripes : true;
+    var x = "";
+    x += '<div class="table-responsive">';
+    x += '  <table class="table table-condensed';
+    if(stripe){
+        x += '  table-striped';
+    }
+    x += '  ">';
+    x += '    <thead>';
+    x += '      <tr>';
+    $.each(headings,function(index){
+        x += '    <th>' + headings[index] +'</th>';
+    });
+    x += '      </tr>';
+    x += '    </thead>';
+    x += '    <tbody>';
+    x +=        itemsFunction();
+    x += '    </tbody>';
+    x += '  </table>';
+    x += '</div>';
+    return x;
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function makeVerticalTable( pairs ){
+    var x = "";
+    x += '<div class="table-responsive">';
+    x += '  <table class="table table-condensed table-striped">';
+    $.each(pairs, function(index){
+        var pair = pairs[index];
+        x += '<tr>';
+        x += '  <th scope="row">'+pair[0]+'</th>';
+        x += '  <td>'+pair[1]+'</td>';
+        x += '</tr>';
+    });
+    x += '  </table>';
+    x += '</div>';
+    return x;
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function makeInfoButton( id, title, content ){
     var x = "";
     if ( typeof content !== 'undefined' ){
-        x += '<button class="btn btn-primary" data-toggle="modal" data-target="#' + id +'">';
-        x +=    button;
+        x += '<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#' + id +'">';
+        x +=  '  <span class="glyphicon glyphicon-list-alt"></span>';
         x += '</button>';
         x += '<div id="' + id + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
         x += '  <div class="modal-dialog modal-sm">';
@@ -82,13 +128,13 @@ function createCharacterPanel( name, myJ ){
     x += '      <hr/>';
     x +=        statsAccordion( name, myJ );
     x += '      <hr/>';
-    x +=        armaments( name, myJ );
-    x += '      <hr/>';
     x +=        augmentations( name, myJ );
     x += '      <hr/>';
-    x +=        gear( name, myJ );
-    x += '      <hr/>';
     x +=        protection( name, myJ );
+    x += '      <hr/>';
+    x +=        armaments( name, myJ );
+    x += '      <hr/>';
+    x +=        gear( name, myJ );
     x += '      <hr/>';
     x +=        spending( name, myJ );
     x += '      <hr/>';
@@ -102,101 +148,78 @@ function createCharacterPanel( name, myJ ){
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function idTable( name, myJ ){
     var x = "";
-    x += '<div class="table-responsive">';
-    x += '  <table class="table table-condensed">';
-    x += '    <thead>';
-    x += '      <tr>';
-    x += '        <th>XP</th>';
-    x += '        <th>Race</th>';
-    x += '        <th>Occupation</th>';
-    x += '        <th>Streetcred</th>';
-    x += '        <th>Wonded</th>';
-    x += '        <th>Exhausted</th>';
-    x += '        <th>Money</th>';
-    x += '      </tr>';
-    x += '    </thead>';
-    x += '    <tbody>';
-    x += '      <tr>';
-    x += '        <td>' + myJ["stats"]["xp"] + '</td>';
-    x += '        <td>' + myJ["id"]["race"] + '</td>';
-    x += '        <td>' + myJ["id"]["occupation"] + '</td>';
-    x += '        <td>' + myJ["stats"]["streetcreed"]["current"] + '/' + myJ["stats"]["streetcreed"]["max"] +' </td>';
-    x += '        <td>' + myJ["stats"]["wonded"] + '</td>';
-    x += '        <td>' + myJ["stats"]["exhausted"] + '</td>';
-    x += '        <td>' + myJ["stats"]["money"] + '</td>';
-    x += '    </tr>';
-    x += '    </tbody>';
-    x += '  </table>';
-    x += '</div>';
+    x += makeTable( ["XP"
+                    ,"Race"
+                    ,"Occupation"
+                    ,"Streetcred"
+                    ,"Wonded"
+                    ,"Exhausted"
+                    ,"Money" ],function(){
+        var y = "";
+        y += '<tr>';
+        y += '  <td>' + myJ["stats"]["xp"] + '</td>';
+        y += '  <td>' + myJ["id"]["race"] + '</td>';
+        y += '  <td>' + myJ["id"]["occupation"] + '</td>';
+        y += '  <td>' + myJ["stats"]["streetcreed"]["current"] + '/' + myJ["stats"]["streetcreed"]["max"] +' </td>';
+        y += '  <td>' + myJ["stats"]["wonded"] + '</td>';
+        y += '  <td>' + myJ["stats"]["exhausted"] + '</td>';
+        y += '  <td>' + myJ["stats"]["money"] + '</td>';
+        y += '</tr>';
+        return y;
+    }, false);
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function tapTable( name, myJ ){
     var x = "";
     x += makeHeading("Tap");
-    x += '<div class="table-responsive">';
-    x += '  <table class="table table-condensed">';
-    x += '    <thead>';
-    x += '      <tr>';
-    x += '        <th>Firewall</th>';
-    x += '        <th>Toughness</th>';
-    x += '        <th>AMS</th>';
-    x += '        <th>Armour</th>';
-    x += '      </tr>';
-    x += '    </thead>';
-    x += '    <tbody>';
-    x += '      <tr>';
-    x += '        <td>' + myJ["tap"]["firewall"] + '</td>';
-    x += '        <td>' + myJ["tap"]["toughness"] + '</td>';
-    x += '        <td>' + myJ["tap"]["ams"] + '</td>';
-    x += '        <td>' + myJ["tap"]["armour"] + '</td>';
-    x += '    </tr>';
-    x += '    </tbody>';
-    x += '  </table>';
-    x += '</div>';
+        x += makeTable( ["Firewall"
+                    ,"Toughness"
+                    ,"AMS"
+                    ,"Armour"],function(){
+        var y = "";
+        y += '<tr>';
+        y += '  <td>' + myJ["tap"]["firewall"] + '</td>';
+        y += '  <td>' + myJ["tap"]["toughness"] + '</td>';
+        y += '  <td>' + myJ["tap"]["ams"] + '</td>';
+        y += '  <td>' + myJ["tap"]["armour"] + '</td>';
+        y += '</tr>';
+        return y;
+    },false);
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function edges( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + edgesId( name ) +'"></a>';
-    x +=  makeHeading('Edges and Hinderances');
-    x += '<div class="table-responsive">';
-    x += '  <table class="table table-condensed">';
-    x += '    <thead>';
-    x += '      <tr>';
-    x += '        <th></th>';
-    x += '        <th>Name</th>';
-    x += '        <th>Info</th>';
-    x += '      </tr>';
-    x += '    </thead>';
-    x += '    <tbody>';
-    $.each(myJ["edges"],function(index){
-        var map = myJ["edges"][index];
-        x += '  <tr class="success">';
-        x += '    <td>'
-        x += '      <span class="glyphicon glyphicon-plus"></span>';
-        x += '    </td>'
-        x += '    <td>' + map["name"] + '</td>';
-        x += '    <td>' + map["info"] + '</td>';
-        x += '  </tr>';
+    x += makeHeading('Edges and Hinderances');
+    x += makeTable( ["","Name","Info",],function(){
+        var y = "";
+        $.each(myJ["edges"],function(index){
+            var map = myJ["edges"][index];
+            y += '<tr class="success">';
+            y += '  <td>'
+            y += '    <span class="glyphicon glyphicon-plus"></span>';
+            y += '  </td>'
+            y += '  <td>' + map["name"] + '</td>';
+            y += '  <td>' + map["info"] + '</td>';
+            y += '</tr>';
+        });
+        $.each(myJ["hinderances"],function(index){
+            var map = myJ["hinderances"][index];
+            y += '<tr class="danger">';
+            y += '  <td>'
+            y += '    <span class="glyphicon glyphicon-minus"></span>';
+            if (map["major"] == 1){
+                y += '<span class="glyphicon glyphicon-minus"></span>';
+            }
+            y += '  </td>'
+            y += '  <td>' + map["name"] + '</td>';
+            y += '  <td>' + map["info"] + '</td>';
+            y += '</tr>';
+        });
+        return y;
     });
-    $.each(myJ["hinderances"],function(index){
-        var map = myJ["hinderances"][index];
-        x += '  <tr class="danger">';
-        x += '    <td>'
-        x += '      <span class="glyphicon glyphicon-minus"></span>';
-        if (map["major"] == 1){
-            x += '  <span class="glyphicon glyphicon-minus"></span>';
-        }
-        x += '    </td>'
-        x += '    <td>' + map["name"] + '</td>';
-        x += '    <td>' + map["info"] + '</td>';
-        x += '  </tr>';
-    });
-    x += '    </tbody>';
-    x += '  </table>';
-    x += '</div>';
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -222,7 +245,7 @@ function statEntry( key, value, accordion, anchor ){
     x += '      <h4 class="panel-title">';
     x += '        <a data-toggle="collapse" data-parent="#"' + accordion + '"" href="#' + anchor + '">';
     x += '          <span class="badge">' + value["value"] + '</span>';
-    x += '          <span class="glyphicon glyphicon-stat"></span>' + key;
+    x += '          <span class="glyphicon glyphicon-stat"></span>' + title(key);
     x += '        </a>';
     x += '      </h4>';
     x += '    </div>';
@@ -242,7 +265,7 @@ function attributeItems( value ){
         x += '<ul class="list-group">';
         x += '  <li class="list-group-item">';
         x += '    <span class="badge">' + value + '</span>';
-        x +=      key;
+        x +=      title(key);
         x += '  </li>';
         x += '</ul>';
     });
@@ -252,32 +275,22 @@ function attributeItems( value ){
 function armaments( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + armamentsId( name ) +'"></a>';
-    x +=  makeHeading('Armaments');
-    x += '<div class="table-responsive">';
-    x += '  <table class="table table-condensed table-striped">';
-    x += '    <thead>';
-    x += '      <tr>';
-    x += '        <th>Name</th>';
-    x += '        <th>Damage</th>';
-    x += '        <th>Weight</th>';
-    x += '        <th>Notes</th>';
-    x += '      </tr>';
-    x += '    </thead>';
-    x += '    <tbody>';
-    $.each(myJ["armaments"],function(index){
-        var map = myJ["armaments"][ index ];
-        x += '  <tr>';
-        x += '    <td>' + map["name"] + '</td>';
-        x += '    <td>' + map["damage"] + '</td>';
-        x += '    <td>' + map["weight"] + '</td>';
-        x += '    <td>'
-        x += makeModal( name+"-weapon-"+index,"", "Notes: "+map["name"], map["notes"] );
-        x += '    <td>'
-        x += '  </tr>';
+    x += makeHeading('Armaments');
+    x += makeTable( ["Name","Damage","Weight",""],function(){
+        var y = "";
+        $.each(myJ["armaments"],function(index){
+            var map = myJ["armaments"][ index ];
+            y += '<tr>';
+            y += '  <td>' + map["name"] + '</td>';
+            y += '  <td>' + map["damage"] + '</td>';
+            y += '  <td>' + map["weight"] + '</td>';
+            y += '  <td>'
+            y += makeInfoButton( name+"-weapon-"+index, "Notes: "+map["name"], map["notes"] );
+            y += '  <td>'
+            y += '</tr>';
+        });
+        return y;
     });
-    x += '    </tbody>';
-    x += '  </table>';
-    x += '</div>';
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -285,46 +298,57 @@ function augmentations( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + augmentationsId( name ) +'"></a>';
     x += makeHeading("Augmentations");
+    x += makeTable( ["Name","Strain","Info"],function(){
+        var y = "";
+        $.each(myJ["augmentations"],function(index){
+            var map = myJ["augmentations"][ index ];
+            y += '  <tr>';
+            y += '    <td>' + map["name"] + '</td>';
+            y += '    <td>' + map["strain"] + '</td>';
+            y += '    <td>' + map["info"] + '</td>';
+            y += '  </tr>';
+        });
+        return y;
+    });
     return x;
-
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function gear( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + gearId( name ) +'"></a>';
     x += makeHeading("Gear");
-    x += '<div class="table-responsive">';
-    x += '  <table class="table table-condensed">';
-    x += '    <thead>';
-    x += '      <tr>';
-    x += '        <th>Name</th>';
-    x += '        <th>Cost</th>';
-    x += '        <th>Info</th>';
-    x += '      </tr>';
-    x += '    </thead>';
-    x += '    <tbody>';
-    $.each(myJ["gear"],function(index){
-        var map = myJ["gear"][ index ];
-        x += '  <tr>';
-        x += '    <td>' + map["name"] + '</td>';
-        x += '    <td>'
-        if ( typeof map["cost"] !== 'undefined'){
-           x +=      map["cost"]
-        }
-        x += '    </td>'
-        x += '    <td>' + map["info"] + '</td>';
-        x += '  </tr>';
+    x += makeTable( ["Name","Cost","Info"],function(){
+        var y = "";
+        $.each(myJ["gear"],function(index){
+            var map = myJ["gear"][ index ];
+            y += '  <tr>';
+            y += '    <td>' + map["name"] + '</td>';
+            y += '    <td>'
+            if ( typeof map["cost"] !== 'undefined'){
+               y +=      map["cost"]
+            }
+            y += '    </td>'
+            y += '    <td>' + map["info"] + '</td>';
+            y += '  </tr>';
+        });
+        return y;
     });
-    x += '    </tbody>';
-    x += '  </table>';
-    x += '</div>';
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function protection( name, myJ ){
+    var map = myJ["protection"];
     var x = "";
     x += '<a class="anchor" id="' + protectionId( name ) +'"></a>';
     x += makeHeading("Protection");
+    x += makeVerticalTable( [
+          ["Torso", map["torso"]]
+        , ["Head", map["head"]]
+        , ["Arms", map["arm"]]
+        , ["Life Support", map["life support"]]
+        , ["Legs", map["leg"]]
+        , ["Hazard Sheild", map["hazard sheild"]]
+    ]);
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -338,7 +362,7 @@ function spending( name, myJ ){
 function campaigns( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + campaignsId( name ) +'"></a>';
-    x +=  makeHeading('Campaigns');
+    x += makeHeading('Campaigns');
     x += '<p>';
     x += '  Campaigns: ToDo';
     x += '</p>';
@@ -348,7 +372,7 @@ function campaigns( name, myJ ){
 function notes( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + notesId( name ) +'"></a>';
-    x +=  makeHeading('Notes');
+    x += makeHeading('Notes');
     x += '<p>';
     x += '  Notes: ToDo';
     x += '</p>';
@@ -366,15 +390,15 @@ function createCharacterDropdown( name, myJ ) {
     x += '    <li class="dropdown-header">Stats</li>';
     x += '    <li><a href="#' + edgesId(name)+ '">Edges and Hinderances</a></li>';
     x += '    <li><a href="#' + skillsId(name)+ '">Skills</a></li>';
-    x += '    <li><a href="#' + armamentsId(name)+ '">Weapons</a></li>';
     x += '    <li><a href="#' + augmentationsId(name)+ '">Augmentations</a></li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Items</li>';
-    x += '    <li><a href="#' + gearId(name)+ '">Gear</a></li>';
     x += '    <li><a href="#' + protectionId(name)+ '">Protection</a></li>';
+    x += '    <li><a href="#' + armamentsId(name)+ '">Weapons</a></li>';
+    x += '    <li><a href="#' + gearId(name)+ '">Gear</a></li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Back story</li>';
-    x += '    <li><a href="#' + spendingId(name)+ '">spending</a></li>';
+    x += '    <li><a href="#' + spendingId(name)+ '">Spending</a></li>';
     x += '    <li><a href="#' + campaignsId(name)+ '">Campaigns</a></li>';
     x += '    <li><a href="#' + notesId(name)+ '">Notes</a></li>';
     x += '  </ul>';

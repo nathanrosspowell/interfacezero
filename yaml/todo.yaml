@@ -20,11 +20,11 @@ augmentations:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~protection
 protection:
     torso: "urban punk combat jacket"
-    head: {}
-    arm: {}
-    life support: {}
-    leg: {}
-    hazard sheild: {}
+    head: ""
+    arm: ""
+    life support: ""
+    leg: ""
+    hazard sheild: ""
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~spending
 spending:

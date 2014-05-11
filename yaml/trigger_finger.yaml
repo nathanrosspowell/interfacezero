@@ -118,7 +118,7 @@ armaments:
 augmentations:
     - name: "Data Carrier"
       info: "Offline HDD storage"
-      stain: 1
+      strain: 1
     - name: "Subdermal Armour"
       info: "+1 Toughness"
       strain: 1
@@ -126,11 +126,11 @@ augmentations:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~protection
 protection:
     torso: "urban punk combat jacket"
-    head: {}
-    arm: {}
-    life support: {}
-    leg: {}
-    hazard sheild: {}
+    head: ""
+    arm: ""
+    life support: ""
+    leg: ""
+    hazard sheild: ""
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~spending
 spending:
