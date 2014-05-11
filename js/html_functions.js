@@ -109,6 +109,35 @@ function makeInfoButton( id, title, content ){
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function makeXpBar( xp ){
+    var levels = [
+          [0,20]
+        , [20,40]
+        , [40,60]
+        , [60,80]
+        , [80,100]
+    ];
+    var min = 0;
+    var max = 100;
+    for (var i = 0; i < levels.length; i++) {
+        if ( xp < levels[ i ][ 1 ] ){
+            min = levels[ i ][ 0 ];
+            max = levels[ i ][ 1 ];
+            break;
+        }
+    }
+    var range = max - min;
+    var percentage = ( ( xp - min ) / range ) * 100;
+    var x = "";
+    x += '<div class="progress progress-striped active">';
+    x += '  <div class="progress-bar" role="progressbar" aria-valuenow="60"'; 
+    x += '  aria-valuemin="'+min+'" aria-valuemax="'+max+'" style="width: '+percentage+'%;">';
+    x +=       xp + "xp";
+    x += '  </div>';
+    x += '</div>';
+    return x;
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function createCharacterPanel( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + characterId(name) +'"></a>';
@@ -148,6 +177,7 @@ function createCharacterPanel( name, myJ ){
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function idTable( name, myJ ){
     var x = "";
+    x += makeXpBar( myJ["stats"]["xp"] );
     x += makeTable( ["XP"
                     ,"Race"
                     ,"Occupation"
@@ -371,11 +401,26 @@ function campaigns( name, myJ ){
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function notes( name, myJ ){
     var x = "";
+    var notes = name + "-notes";
+    var anchor = name + "-notes-id";
     x += '<a class="anchor" id="' + notesId( name ) +'"></a>';
     x += makeHeading('Notes');
-    x += '<p>';
-    x += '  Notes: ToDo';
-    x += '</p>';
+    x += '<div class="panel-group" id="' + notes + '">';
+    x += '  <div class="panel panel-default">';
+    x += '    <div class="panel-heading">';
+    x += '      <h4 class="panel-title">';
+    x += '        <a data-toggle="collapse" data-parent="#"' + notes + '"" href="#' + anchor + '">';
+    x += '          <span class="glyphicon glyphicon-stat"></span>' + title("hello");
+    x += '        </a>';
+    x += '      </h4>';
+    x += '    </div>';
+    x += '    <div id="' + anchor + '" class="panel-collapse collapse">';
+    x += '      <div class="panel-body">';
+    //x +=            attributeItems( value );
+    x += '      </div>';
+    x += '    </div>';
+    x += '  </div>';
+    x += '</div>';
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
