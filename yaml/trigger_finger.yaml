@@ -60,23 +60,33 @@ tap:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~edges
 edges:
-    cutter: "+1 hacking firewalls"
-    interface: "+tap firewall"
-    hacker: "if hacking a corp get bonus key information"
+    - name: "Cutter"
+      info: "+1 hacking firewalls"
+    - name: "Interface"
+      info: "+1 tap firewall "
+    - name : "Hacker"
+      info: "if hacking a corp get bonus key information"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hinderances
 hinderances:
-    code of honor: "major hinderence"
-    bad repuration: "people know thing went bad"
-    black listed: "a corp doesn't like you. (Not chimera)"
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~augments
-augments:
-    data carrier: "offline HDD"
-    subdermal armour: "under the skin armour"
+    - name : "Code of Honor"
+      major: true
+      info: "Has rules to live by"
+    - name: "Bad Repuration"
+      info: "people know thing went bad"
+    - name: "Black listed"
+      info: ""
+      notes: "a corp doesn't like you. (Not chimera)"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~gear
 gear:
+    - name: "Harley Motorcycle"
+      info: "1d4 driving AI"
+      cost: "1000c"
+    - name: "medium cal ammo"
+      info: "a normal amount"
+    - name: "mesh id jammer"
+      info: "anarchy symbol, needs battery"
     - name: "bounty board" 
       info: "list of known fugitives"
       cost: "400/cpm"
@@ -89,31 +99,29 @@ gear:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~armaments
 armaments:
-    - name: "urban punk 45acp smg"
+    - name: "Urban Punk 45acp smg"
       damage: "2d6+1"
       weight: 3
-    - name: "urban punk shillelagh hack stick"
+      cost: "500c"
+    - name: "Urban Punk shillelagh hack stick"
       damage: "2d10"
       weight: 2
+      cost: "500c"
+      notes: "Needs small battery to be used."
     - name: "Flashbang"
       damage: "2d10"
       weight: 0
+      cost: "500c"
+      notes: "x3"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~augmentations
 augmentations:
-    - name: "data carrier"
+    - name: "Data Carrier"
+      info: "Offline HDD storage"
       stain: 1
-    - name: "subdermal armour"
+    - name: "Subdermal Armour"
+      info: "+1 Toughness"
       strain: 1
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~misc gear
-misc gear:
-    - name: "harley motorcycle"
-      info: "1d4 driving AI"
-    - name: "medium cal ammo"
-      info: "a normal amount"
-    - name: "mesh id jammer"
-      info: "anarchy symbol, needs battery"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~protection
 protection:

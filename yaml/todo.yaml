@@ -1,0 +1,41 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~edges
+edges:
+   - name: "Cutter"
+     info: "+1 hacking firewalls"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hinderances
+hinderances:
+    - name : "Code of Honor"
+      major: 1
+      info: "Has rules to live by"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~gear
+gear:
+    - name: "Harley Motorcycle"
+      info: "1d4 driving AI"
+      cost: "1000c"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~augmentations
+augmentations:
+    - name: "Data Carrier"
+      info: "Offline HDD storage"
+      stain: 1
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~protection
+protection:
+    torso: "urban punk combat jacket"
+    head: {}
+    arm: {}
+    life support: {}
+    leg: {}
+    hazard sheild: {}
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~spending
+spending:
+    save kado:
+        earning: 
+            - 5000c - progress
+        spending:
+            - 950c - apps
+    kill BuzzKill:
+        earning:
+            - 5000c progress
+        spending:
+            - 300c normal suit
+            - 1 street cred calling grips
