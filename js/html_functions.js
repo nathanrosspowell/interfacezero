@@ -478,12 +478,12 @@ function notesItem( name, value ){
     $.each(value,function(key,list){
         var id = name + '-notes-' + key;
         var y = "";
-        y += '<ul class="list-group">';
-        y += '  <li class="list-group-item">';
+        y += '<ul class="list-inline">';
         $.each(list,function(index){
-            y +=  list[index];
+            y += '<li>';
+            y +=    list[index];
+            y += '</li>';
         });
-        y += '  </li>';
         y += '</ul>';
         // Make button to open modal.
         x += '<li>'
