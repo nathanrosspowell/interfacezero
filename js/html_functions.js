@@ -477,7 +477,7 @@ function notes( name, myJ ){
     x += '</ul>';
     $.each(modals,function(index){
         x += modals[index];
-    };
+    });
     return x;
 }
 
