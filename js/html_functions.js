@@ -467,7 +467,7 @@ function notes( name, myJ ){
         y += '</ul>';
         // Make button to open modal.
         x += '<li>'
-        x +=    makeInfoButtonBig(id,title(key),y);
+        x +=    makeInfoButton(id,title(key),y);
         x += '</li>'
     });
     x += '</ul>';
