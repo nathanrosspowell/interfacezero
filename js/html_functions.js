@@ -454,23 +454,8 @@ function notes( name, myJ ){
     var anchor = name + "-notes-id";
     x += '<a class="anchor" id="' + notesId( name ) +'"></a>';
     x += makeHeading('Notes');
-    x += '<div class="panel-group" id="' + notes + '">';
-    x += '  <div class="panel panel-default">';
-    x += '    <div class="panel-heading">';
-    x += '      <h4 class="panel-title">';
-    x += '        <a data-toggle="collapse" data-parent="#"' + notes + '"" href="#' + anchor + '">';
-    x += '          <span class="glyphicon glyphicon-stat"></span>' + title("hello");
-    x += '        </a>';
-    x += '      </h4>';
-    x += '    </div>';
-    x += '    <div id="' + anchor + '" class="panel-collapse collapse">';
-    x += '      <div class="panel-body">';
     var modals = notesItem( name, myJ["notes"] );
-    x +=           modals[ 0 ];
-    x += '      </div>';
-    x += '    </div>';
-    x += '  </div>';
-    x += '</div>';
+    x += modals[ 0 ];
     x += modals[1];
     return x;
 }
