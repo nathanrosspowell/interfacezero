@@ -457,7 +457,7 @@ function notes( name, myJ ){
     x += makeHeading('Notes');
     x += '<ul class="list-inline">';
     $.each(myJ["notes"],function(key,list){
-        var id = name + '-notes-' + key;
+        var id = name + '-notes-' + encodeURI(key);
         //
         var y = "";
         y += '<ul class="list-inline">';
