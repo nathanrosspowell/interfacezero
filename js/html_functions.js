@@ -108,7 +108,6 @@ function makeInfoButton( id, title, content ){
     }
     return x;
 }
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeCharacterDescription(character,occupation,xp ){
     var levels = [
           [20,"Novice"]
@@ -126,7 +125,7 @@ function makeCharacterDescription(character,occupation,xp ){
     }
     var an = "a";
     var vowels = ['a','e','i','o','u'];
-    var firstChar = occupation[ 0 ].toLower();
+    var firstChar = occupation[ 0 ].toLowerCase();
     for (var i = 0; i < vowels.length; i++) {
         if ( firstChar[ 0 ] == "a" ){
             an = "an";
