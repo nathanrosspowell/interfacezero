@@ -125,9 +125,9 @@ function makeCharacterDescription(character,race,occupation,xp ){
     }
     var an = "a";
     var vowels = ['a','e','i','o','u'];
-    var firstChar = level[ 0 ].toLowerCase();
+    var firstChar = level[0].toLowerCase();
     for (var i = 0; i < vowels.length; i++) {
-        if ( firstChar[ 0 ] == "a" ){
+        if (firstChar[0] == vowels[i]){
             an = "an";
             break;
         }
