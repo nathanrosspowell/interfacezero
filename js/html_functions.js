@@ -119,7 +119,7 @@ function makeInfoButtonBig( id, title, content ){
     var x = "";
     var modal = "";
     if ( typeof content !== 'undefined' ){
-        x += '<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#' + id +'">';
+        x += '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#' + id +'">';
         x +=  title;
         x += '</button>';
         modal += '<div id="' + id + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
@@ -128,11 +128,11 @@ function makeInfoButtonBig( id, title, content ){
         modal += '      <div class="modal-header">';
         modal += '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
         modal += '        <h4 class="modal-title">';
-        x +=            title
+        modal +=            title
         modal += '        </h4>';
         modal += '      </div>';
         modal += '      <div class="modal-body">';
-        x +=          content;
+        modal +=          content;
         modal += '      </div>';
         modal += '    </div>';
         modal += '  </div>';
