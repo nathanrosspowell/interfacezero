@@ -109,6 +109,33 @@ function makeInfoButton( id, title, content ){
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function makeCharacterDescription(character,occupation,xp ){
+    var levels = [
+          [20,"Novice"]
+        , [40,"Intermediate"]
+        , [60,"Intermediate"]
+        , [80,"Intermediate"]
+        , [100,"Intermediate"]
+    ];
+    var level = levels[0][1];
+    for (var i = 0; i < levels.length; i++) {
+        if ( xp < levels[ i ][ 1 ] ){
+            level = levels[ i ][ 1 ];
+            break;
+        }
+    }
+    var an = "a";
+    var vowels = ['a','e','i','o','u'];
+    var firstChar = occupation[ 0 ].toLower();
+    for (var i = 0; i < vowels.length; i++) {
+        if ( firstChar[ 0 ] == "a" ){
+            an = "an";
+            break;
+        }
+    }
+    return '<p> ' + character + ' is ' + an + ' ' + level + ' ' + occupation + '</p>';
+};
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeXpBar( xp ){
     var levels = [
           [0,20]
@@ -177,7 +204,8 @@ function createCharacterPanel( name, myJ ){
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function idTable( name, myJ ){
     var x = "";
-    x += makeXpBar( myJ["stats"]["xp"] );
+    x += makeCharacterDescription(myJ["id"]["name"],myJ["id"]["occupation"],myJ["stats"]["xp"]);
+    x += makeXpBar(myJ["stats"]["xp"]);
     x += makeTable( ["XP"
                     ,"Race"
                     ,"Occupation"
