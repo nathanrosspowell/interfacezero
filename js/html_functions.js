@@ -96,7 +96,7 @@ function makeInfoButton( id, title, content ){
         x += '<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#' + id +'">';
         x +=  '  <span class="glyphicon glyphicon-list-alt"></span>';
         x += '</button>';
-        x += '<div id="' + id + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="'+id+'" aria-hidden="true">';
+        x += '<div id="' + id + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
         x += '  <div class="modal-dialog modal-sm">';
         x += '    <div class="modal-content">';
         x += '      <div class="modal-header">';
