@@ -6,6 +6,12 @@ function characterId( name ){
 function skillsId( name ){
     return name + "-skills";
 }
+function statsId( name ){
+    return name + "-stats";
+}
+function tapId( name ){
+    return name + "-tap";
+}
 function edgesId( name ){
     return name + "-edges";
 }
@@ -90,6 +96,31 @@ function makeInfoButton( id, title, content ){
         x += '<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#' + id +'">';
         x +=  '  <span class="glyphicon glyphicon-list-alt"></span>';
         x += '</button>';
+        x += '<div id="' + id + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="'+id+'" aria-hidden="true">';
+        x += '  <div class="modal-dialog modal-sm">';
+        x += '    <div class="modal-content">';
+        x += '      <div class="modal-header">';
+        x += '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+        x += '        <h4 class="modal-title">';
+        x +=            title
+        x += '        </h4>';
+        x += '      </div>';
+        x += '      <div class="modal-body">';
+        x +=          content;
+        x += '      </div>';
+        x += '    </div>';
+        x += '  </div>';
+        x += '</div>';
+    }
+    return x;
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function makeInfoButtonBig( id, title, content ){
+    var x = "";
+    if ( typeof content !== 'undefined' ){
+        x += '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#' + id +'">';
+        x +=  title;
+        x += '</button>';
         x += '<div id="' + id + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
         x += '  <div class="modal-dialog modal-sm">';
         x += '    <div class="modal-content">';
@@ -108,6 +139,7 @@ function makeInfoButton( id, title, content ){
     }
     return x;
 }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeCharacterDescription(character,race,occupation,xp ){
     var levels = [
           [20,"Novice"]
@@ -207,6 +239,8 @@ function createCharacterPanel( name, myJ ){
 function idTable( name, myJ ){
     var map = myJ["stats"];
     var x = "";
+    x += '<a class="anchor" id="' + statsId( name ) +'"></a>';
+    x += makeHeading("Stats");
     x += makeCharacterDescription(myJ["id"]["name"],myJ["id"]["race"],myJ["id"]["occupation"],myJ["stats"]["xp"]);
     x += makeXpBar(myJ["stats"]["xp"]);
     x += makeVerticalTable( [
@@ -222,6 +256,7 @@ function idTable( name, myJ ){
 function tapTable( name, myJ ){
     var map = myJ["tap"];
     var x = "";
+    x += '<a class="anchor" id="' + tapId( name ) +'"></a>';
     x += makeHeading("Tap");
     x += makeVerticalTable([
           ["Firewall", map["firewall"]]
@@ -429,11 +464,33 @@ function notes( name, myJ ){
     x += '    </div>';
     x += '    <div id="' + anchor + '" class="panel-collapse collapse">';
     x += '      <div class="panel-body">';
-    //x +=            attributeItems( value );
+    x +=            notesItem( name, value );
     x += '      </div>';
     x += '    </div>';
     x += '  </div>';
     x += '</div>';
+    return x;
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function notesItem( name, value ){
+    var x = "";
+    x += '<ul class="list-unstyled">';
+    $.each(value,function(key,list){
+        var id = name + '-notes-' + key;
+        var y = "";
+        y += '<ul class="list-group">';
+        y += '  <li class="list-group-item">';
+        $.each(list,function(index){
+            y +=  list[index];
+        });
+        y += '  </li>';
+        y += '</ul>';
+        // Make button to open modal.
+        x += '<li>'
+        x +=    makeInfoButtonBig(id,title(key),y);
+        x += '</li>'
+    });
+    x += '</ul>';
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -446,6 +503,8 @@ function createCharacterDropdown( name, myJ ) {
     x += '    <li><a href="#' + characterId(name)+ '">' + myJ["id"]["name"] + '</a></li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Stats</li>';
+    x += '    <li><a href="#' + statsId(name)+ '">Stats</a></li>';
+    x += '    <li><a href="#' + tapId(name)+ '">Tap</a></li>';
     x += '    <li><a href="#' + edgesId(name)+ '">Edges and Hinderances</a></li>';
     x += '    <li><a href="#' + skillsId(name)+ '">Skills</a></li>';
     x += '    <li><a href="#' + augmentationsId(name)+ '">Augmentations</a></li>';
@@ -468,8 +527,6 @@ function addHtmlForYaml( name, myJ ) {
     // Add the html for the stats
     var html = createCharacterPanel( name, myJ );
     $("#interfacezero-main").append(html)
-    // Close that accordion.
-    $('#'+skillsId(name)).collapse("hide");
     // Add the html for the navigation.
     var dropdown = createCharacterDropdown( name, myJ );
     $("#interfacezero-navbar").append(dropdown);
