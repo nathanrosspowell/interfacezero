@@ -156,10 +156,10 @@ function makeXpBar( xp ){
         }
     }
     var range = max - min;
-    var percentage = ( ( xp - min ) / range ) * 100;
+    var percentage = ( ( xp - min ) / range  ) * 100;
     var x = "";
     x += '<div class="progress progress-striped active">';
-    x += '  <div class="progress-bar" role="progressbar" aria-valuenow="60"'; 
+    x += '  <div class="progress-bar" role="progressbar" aria-valuenow="'+percentage+'"'; 
     x += '  aria-valuemin="'+min+'" aria-valuemax="'+max+'" style="width: '+percentage+'%;">';
     x +=       xp + "xp";
     x += '  </div>';
