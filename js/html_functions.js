@@ -122,8 +122,8 @@ function makeInfoButtonBig( id, title, content ){
         x += '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#' + id +'">';
         x +=  title;
         x += '</button>';
-        modal += '<div id="' + id + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
-        modal += '  <div class="modal-dialog modal-sm">';
+        modal += '<div id="' + id + '" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
+        modal += '  <div class="modal-dialog modal-lg">';
         modal += '    <div class="modal-content">';
         modal += '      <div class="modal-header">';
         modal += '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
@@ -461,9 +461,9 @@ function notes( name, myJ ){
         id = id.replace(/\s+/g, ''); // strip spaces
         //
         var y = "";
-        y += '<ul class="list-inline">';
+        y += '<ul class="list-group">';
         $.each(list,function(index){
-            y += '<li>';
+            y += '<li class="list-group-item">';
             y +=    list[index];
             y += '</li>';
         });
