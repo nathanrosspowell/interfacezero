@@ -464,7 +464,7 @@ function notes( name, myJ ){
     x += '    </div>';
     x += '    <div id="' + anchor + '" class="panel-collapse collapse">';
     x += '      <div class="panel-body">';
-    x +=            notesItem( name, value );
+    x +=            notesItem( name, myJ["notes"] );
     x += '      </div>';
     x += '    </div>';
     x += '  </div>';
