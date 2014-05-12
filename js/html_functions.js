@@ -108,7 +108,7 @@ function makeInfoButton( id, title, content ){
     }
     return x;
 }
-function makeCharacterDescription(character,occupation,xp ){
+function makeCharacterDescription(character,race,occupation,xp ){
     var levels = [
           [20,"Novice"]
         , [40,"Intermediate"]
@@ -125,14 +125,17 @@ function makeCharacterDescription(character,occupation,xp ){
     }
     var an = "a";
     var vowels = ['a','e','i','o','u'];
-    var firstChar = occupation[ 0 ].toLowerCase();
+    var firstChar = level[ 0 ].toLowerCase();
     for (var i = 0; i < vowels.length; i++) {
         if ( firstChar[ 0 ] == "a" ){
             an = "an";
             break;
         }
     }
-    return '<p>' + character + ' is ' + an + ' <u>' + level + '</u> <u>' + occupation + '</u> with <u>' + xp + '</u> experience points</p>';
+    return '<p>' + character + ' is ' + an + ' <u>' + level + '</u> <u>' 
+        + race + '</u> <u>' 
+        + occupation + '</u> with <u>' 
+        + xp + '</u> experience points.</p>';
 };
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeXpBar( xp ){
@@ -202,47 +205,30 @@ function createCharacterPanel( name, myJ ){
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function idTable( name, myJ ){
+    var map = myJ["stats"];
     var x = "";
-    x += makeCharacterDescription(myJ["id"]["name"],myJ["id"]["occupation"],myJ["stats"]["xp"]);
+    x += makeCharacterDescription(myJ["id"]["name"],myJ["id"]["race"],myJ["id"]["occupation"],myJ["stats"]["xp"]);
     x += makeXpBar(myJ["stats"]["xp"]);
-    x += makeTable( ["XP"
-                    ,"Race"
-                    ,"Occupation"
-                    ,"Streetcred"
-                    ,"Wonded"
-                    ,"Exhausted"
-                    ,"Money" ],function(){
-        var y = "";
-        y += '<tr>';
-        y += '  <td>' + myJ["stats"]["xp"] + '</td>';
-        y += '  <td>' + myJ["id"]["race"] + '</td>';
-        y += '  <td>' + myJ["id"]["occupation"] + '</td>';
-        y += '  <td>' + myJ["stats"]["streetcreed"]["current"] + '/' + myJ["stats"]["streetcreed"]["max"] +' </td>';
-        y += '  <td>' + myJ["stats"]["wonded"] + '</td>';
-        y += '  <td>' + myJ["stats"]["exhausted"] + '</td>';
-        y += '  <td>' + myJ["stats"]["money"] + '</td>';
-        y += '</tr>';
-        return y;
-    }, false);
+    x += makeVerticalTable( [
+          ["Money", map["money"]]
+        , ["Streetcred", map["streetcreed"]["current"] + '/' + map["streetcreed"]["max"]]
+        , ["Wonded", map["wonded"]]
+        , ["Exhausted", map["exhausted"]]
+    ]);
+    
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function tapTable( name, myJ ){
+    var map = myJ["tap"];
     var x = "";
     x += makeHeading("Tap");
-        x += makeTable( ["Firewall"
-                    ,"Toughness"
-                    ,"AMS"
-                    ,"Armour"],function(){
-        var y = "";
-        y += '<tr>';
-        y += '  <td>' + myJ["tap"]["firewall"] + '</td>';
-        y += '  <td>' + myJ["tap"]["toughness"] + '</td>';
-        y += '  <td>' + myJ["tap"]["ams"] + '</td>';
-        y += '  <td>' + myJ["tap"]["armour"] + '</td>';
-        y += '</tr>';
-        return y;
-    },false);
+    x += makeVerticalTable([
+          ["Firewall", map["firewall"]]
+        , ["Toughness", map["toughness"]]
+        , ["ams", map["toughness"]]
+        , ["armour", map["toughness"]]
+    ]);
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
