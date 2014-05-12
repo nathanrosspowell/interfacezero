@@ -122,23 +122,23 @@ function makeInfoButtonBig( id, title, content ){
         x += '<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#' + id +'">';
         x +=  title;
         x += '</button>';
-        y += '<div id="' + id + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
-        y += '  <div class="modal-dialog modal-sm">';
-        y += '    <div class="modal-content">';
-        y += '      <div class="modal-header">';
-        y += '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-        y += '        <h4 class="modal-title">';
-        y +=            title
-        y += '        </h4>';
-        y += '      </div>';
-        y += '      <div class="modal-body">';
-        y +=          content;
-        y += '      </div>';
-        y += '    </div>';
-        y += '  </div>';
-        y += '</div>';
+        x += '<div id="' + id + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
+        x += '  <div class="modal-dialog modal-sm">';
+        x += '    <div class="modal-content">';
+        x += '      <div class="modal-header">';
+        x += '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+        x += '        <h4 class="modal-title">';
+        x +=            title
+        x += '        </h4>';
+        x += '      </div>';
+        x += '      <div class="modal-body">';
+        x +=          content;
+        x += '      </div>';
+        x += '    </div>';
+        x += '  </div>';
+        x += '</div>';
     }
-    return [x,y];
+    return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeCharacterDescription(character,race,occupation,xp ){
@@ -454,16 +454,7 @@ function notes( name, myJ ){
     var anchor = name + "-notes-id";
     x += '<a class="anchor" id="' + notesId( name ) +'"></a>';
     x += makeHeading('Notes');
-    var modals = notesItem( name, myJ["notes"] );
-    x += modals[ 0 ];
-    x += modals[1];
-    return x;
-}
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function notesItem( name, value ){
-    var content = ""
-    var x = "";
-    x += '<ul class="list-unstyled">';
+    x += '<ul class="list-inline">';
     $.each(value,function(key,list){
         var id = name + '-notes-' + key;
         var y = "";
@@ -476,14 +467,13 @@ function notesItem( name, value ){
         y += '</ul>';
         // Make button to open modal.
         x += '<li>'
-        var modal = makeInfoButtonBig(id,title(key),y);
-        x += modal[ 0 ];
+        x +=    makeInfoButtonBig(id,title(key),y);
         x += '</li>'
-        content += modal[1];
     });
     x += '</ul>';
-    return [x,content];
+    return x;
 }
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function createCharacterDropdown( name, myJ ) {
     var shortName = myJ["id"]["name"].split(" ")[ 0 ];
