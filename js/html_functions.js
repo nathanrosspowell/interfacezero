@@ -132,7 +132,7 @@ function makeCharacterDescription(character,occupation,xp ){
             break;
         }
     }
-    return '<p> ' + character + ' is ' + an + ' ' + level + ' ' + occupation + '</p>';
+    return '<p> ' + character + ' is ' + an + ' ' + level + ' ' + occupation + ' with ' + xp + ' experience points</p>';
 };
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeXpBar( xp ){
