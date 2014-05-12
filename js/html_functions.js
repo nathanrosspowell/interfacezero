@@ -118,7 +118,7 @@ function makeCharacterDescription(character,race,occupation,xp ){
     ];
     var level = levels[0][1];
     for (var i = 0; i < levels.length; i++) {
-        if ( xp < levels[ i ][ 1 ] ){
+        if ( xp < levels[ i ][ 0 ] ){
             level = levels[ i ][ 1 ];
             break;
         }
