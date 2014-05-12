@@ -449,7 +449,7 @@ function campaigns( name, myJ ){
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function notes( name, myJ ){
-    var modals = []'
+    var modals = [];
     var x = "";
     var notes = name + "-notes";
     var anchor = name + "-notes-id";
