@@ -140,7 +140,7 @@ function makeCharacterDescription(character,race,occupation,xp ){
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeXpBar( xp ){
     var levels = [
-          [0,20]
+          [0,20]// use this to set the range for the bar
         , [20,40]
         , [40,60]
         , [60,80]
@@ -160,7 +160,7 @@ function makeXpBar( xp ){
     var x = "";
     x += '<div class="progress progress-striped active">';
     x += '  <div class="progress-bar" role="progressbar" aria-valuenow="'+percentage+'"'; 
-    x += '  aria-valuemin="0" aria-valuemax="20" style="width:'+percentage+'%;">';
+    x += '  aria-valuemin="'+levels[0][0]+'" aria-valuemax="'+levels[0][1]+'" style="width: '+percentage+'%;">';
     x +=       xp + "xp";
     x += '  </div>';
     x += '</div>';
