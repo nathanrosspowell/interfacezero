@@ -45,7 +45,7 @@ YAML files use significant whitespace (much like the Python programming language
       This is a multiline string.
       So you can do as much as you like, as long as it is indented correctly
   key4: "a string that needs 'escaping' because of the quote around that word"
-  key5: "a string that needs 'escaping' because of the quote around that word"
+  key5: 'a string that needs "escaping" because of the quote around that word'
   key5: "a string that needs escaping because of the last characer :"
   key6: "a string that needs escaping because of the last characer ,"
   key7: "a string that needs escaping because of the last characer ,"
