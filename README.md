@@ -39,9 +39,9 @@ YAML files use significant whitespace (much like the Python programming language
   ```YAML
   - 1
   
-  - 2
+  - 2.0
   
-  - 3
+  - Three
   ```
 * Strings (text) which have some extra rules because of the parsing library that is used:
  ```YAML
