@@ -23,14 +23,18 @@ YAML files use significant whitespace (much like the Python programming language
 * A map:
   ```YAML
   key: 1
+
   anotherKey: 2
+  
   Another Key: 2
   ```
 * A list:
   ```YAML
   - 1
+  
   - 2
-  - 2
+  
+  - 3
   ```
 * Strings (text) which have some exta rules because of the parsing libraty that is used:
  ```YAML
