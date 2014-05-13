@@ -1,10 +1,14 @@
 Interface Zero
 ==============
 
-RPG digital stats
+Digital stats [website][website]
 -----------------
 
-[Interface Zero][interfacezero] is a cyberpunk themed pen and paper RPG. This repro used the  `gh-pages` feature of GitHub to provide a website that will be up to date every time a file is updated. The digitised character sheets are laid out in the human friendly data formal [YAML][yaml].
+[Interface Zero][interfacezero] is a cyberpunk themed pen and paper RPG.
+The character sheets are made up of many stats, so I wanted to digitise them in some way. 
+This repro used the  `gh-pages` feature of GitHub to provide a website that will be up to date every time a file is updated. 
+The digitised character sheets are laid out in the human friendly data formal [YAML][yaml].
+The final [website][website] is powered by the [Twitter Bootstrap][bootstrap] framework so it is viewed perfectly on all platforms, escpecially mobile.
 
 
 How to add a character
@@ -67,3 +71,4 @@ Technology used
 [bootstrap]: https://github.com/twbs/bootstrap
 [jsyaml]: https://github.com/nodeca/js-yaml
 [nathan]: http://nathanrosspowell.com/about_me/ "Link to personal email"
+[website]: http://nathanrosspowell.com/interfacezero/
