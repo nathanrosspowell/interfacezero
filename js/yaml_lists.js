@@ -1,4 +1,4 @@
 var playerCharacters = [
       'trigger_finger'
-    , 'derp_man'
+    //, 'your_character_file'
 ];
