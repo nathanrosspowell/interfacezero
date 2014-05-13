@@ -13,9 +13,9 @@ The final [website][website] is powered by the [Twitter Bootstrap][bootstrap] fr
 
 How to add a character
 ----------------------
-Make a copy of one of the YAML files in the [gh-pages/yaml][yamlfolder] folder and rename it as `your_character_name.yaml`. (Please no spaces)
+Make a copy of one of the YAML files in the [gh-pages/yaml](gh-pages/yaml) folder and rename it as `your_character_name.yaml`. (Please no spaces)
 
-Edit the values and, When you are happy with it, add it to that folder.
+Edit the values and, when you are happy with it, add it to that [folder][yamlfolder].
 Finally add that file name to the list in this [Javascript file][jsfile]. 
 You can do all of this through the web iterface
 
