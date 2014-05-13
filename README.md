@@ -4,7 +4,7 @@ Interface Zero
 RPG digital stats
 -----------------
 
-[Interface Zero][interfacezero] is a cyberpunk themed pen and paper RPG. This repro used the  `gh-pages` feature of GitHub to provide a website that will be up to date every time a file is updated. The digitised chartacter sheets are layed out in the human friendly data formal [YAML][yaml].
+[Interface Zero][interfacezero] is a cyberpunk themed pen and paper RPG. This repro used the  `gh-pages` feature of GitHub to provide a website that will be up to date every time a file is updated. The digitised character sheets are laid out in the human friendly data formal [YAML][yaml].
 
 
 How to add a character
@@ -19,7 +19,7 @@ To get permission to write directly to this repro contact [me][nathan].
 How to edit YAML
 ----------------
 [YAML][yaml] is a human friendly data serialization standard for all programming languages.
-YAML files use significant whitespace (much like the Python programming language) to group data together. The main notations to reconise are:
+YAML files use significant whitespace (much like the Python programming language) to group data together. The main notations to recognise are:
 * A map:
   ```YAML
   key: 1
@@ -36,7 +36,7 @@ YAML files use significant whitespace (much like the Python programming language
   
   - 3
   ```
-* Strings (text) which have some exta rules because of the parsing libraty that is used:
+* Strings (text) which have some extra rules because of the parsing library that is used:
  ```YAML
   key0: This is a string no need for quotes
   key1: "A string in quotes"
@@ -46,11 +46,11 @@ YAML files use significant whitespace (much like the Python programming language
       So you can do as much as you like, as long as it is indented correctly
   key4: "a string that needs 'escaping' because of the quote around that word"
   key5: 'a string that needs "escaping" because of the quote around that word'
-  key5: "a string that needs escaping because of the last characer :"
+  key5: "a string that needs escaping because of the last character :"
   key6: "a string that needs escaping because of the last characer ,"
-  key7: "a string that needs escaping because of the last characer ,"
+  key7: "a string that needs escaping because of the last character ,"
   key8: >
-      The multiline string can have 'all' the "crazy" characers it wasnts ::: ,,, !!!
+      The multiline string can have 'all' the "crazy" characters it wants ::: ,,, !!!
     
   ```
 
