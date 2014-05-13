@@ -13,11 +13,14 @@ The final [website][website] is powered by the [Twitter Bootstrap][bootstrap] fr
 
 How to add a character
 ----------------------
-Make a copy of one of the YAML files in the [gh-pages/yaml][yamlfolder] and dave it as `your_character_name.yaml`. (Please no spaces)
+Make a copy of one of the YAML files in the [gh-pages/yaml][yamlfolder] folder and rename it as `your_character_name.yaml`. (Please no spaces)
 
-When you are happy with it, add it to that folder. Finally add that file name to the list in this [Javascript file][jsfile].
+Edit the values and, When you are happy with it, add it to that folder.
+Finally add that file name to the list in this [Javascript file][jsfile]. 
+You can do all of this through the web iterface
 
-To get permission to write directly to this repro contact [me][nathan].
+To get permission to write directly to this repro contact [me][nathan]. 
+Alternatively you can fork this repro and issue a pull-request (you are going to have to set up Git on your computer to do this).
 
 
 How to edit YAML
