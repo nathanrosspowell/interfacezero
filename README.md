@@ -29,18 +29,16 @@ How to edit YAML
 YAML files use significant whitespace (much like the Python programming language) to group data together. The main notations to recognise are:
 * A map:
   ```YAML
-  key: 1
-
-  anotherKey: 2.0
   
+  key: 1
+  anotherKey: 2.0
   Another Key: Three
   ```
 * A list:
   ```YAML
+
   - 1
-  
   - 2.0
-  
   - Three
   ```
 * Strings (text) which have some extra rules because of the parsing library that is used:
