@@ -60,7 +60,20 @@ YAML files use significant whitespace (much like the Python programming language
       The multiline string can have 'all' the "crazy" characters it wants ::: ,,, !!!
     
   ```
-
+* Basic nesting:
+  ```YAML
+  id: # A map of main attributes (This is a comment)
+      name: Rodimus Prime
+      race: Autobot
+  enemies: # A list of enemies. 
+      - Megatron
+      - Unicron
+  friends: # A lists of maps of friend attribues!
+      - name: Ironhide
+        race: Autobot
+      - name: Daniel
+        race: Human
+  ```
 Technology used
 ---------------
 * [Twitter Bootstrap][bootstrap]
