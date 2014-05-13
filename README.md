@@ -62,6 +62,7 @@ YAML files use significant whitespace (much like the Python programming language
   ```
 * Basic nesting:
   ```YAML
+
   id: # A map of main attributes (This is a comment)
       name: Rodimus Prime
       race: Autobot
