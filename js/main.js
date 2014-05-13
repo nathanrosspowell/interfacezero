@@ -12,7 +12,10 @@ $(window).bind("load", function() {
             });
         });
         $('body').scrollspy({offset: 60});
+        error test!!!! LOLOLOL
+        
         $('#interfacezero-warning').hide();
+        
     }
     catch(err){
         var x = "";
