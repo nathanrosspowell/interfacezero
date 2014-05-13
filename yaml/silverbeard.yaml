@@ -89,9 +89,13 @@ edges:
     - name: Augmented Warrior
       info: +1 Parry +1 unarmed damage
     - name: Arcane Background
-      info:  
-    - name : Martial Artist
-      info: 
+      info: POWERS!
+    - name: Martial Artist
+      info: "This character is highly trained in hand-to-hand fighting.
+            He is never considered unarmed in combat and so is never
+            subject to the Unarmed Defender rule (page 76). With a
+            successful unarmed attack, he adds +d4 to his Strength roll
+            (as if he were using a small weapon)."
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hinderances
 hinderances:
@@ -141,12 +145,20 @@ armaments:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~augmentations
 augmentations:
-    - name: Data Carrier
-      info: Offline HDD storage
-      strain: 1
+    - name: Muscle Augmentation
+      info: Strength die is raised by 1 type
+      strain: 2
     - name: Subdermal Armour
       info: +1 Toughness
       strain: 1
+    - name: CYBERLEGS; LIGAMENT ENHANCEMENT
+      info: Ligament Enhancement adds 4” to the character’s Pace.
+      strain: 0
+    - name: NIGHT VISION OPTICS
+      info: "Low light vision ignores penalties for Dim and Dark
+            lighting, allowing the creature to see in all but pitch black
+            conditions."
+      strain: 0
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~protection
 protection:
