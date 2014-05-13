@@ -1,0 +1,207 @@
+%YAML 1.2
+---
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~id
+id:
+    name: Samson '<i>Silverbeard</i>' Huurt
+    race: Human
+    occupation: Bodyguard
+    backstory: >
+        The first thing Samson remembers is sitting bolt upright, IVs and clamps ripping from his skin. Doctors and nurses chattering
+        at him in chinese trying to force him down back onto the bed, one approached him with a syringe, his instincts kicked in and his adrenal 
+        glands swelled and he propelled himself with inhuman stength from the tabls, tearing off the constrains as if they were paper.
+        
+        Taking off down an alley, his legs pumping with almost pnumatic frequency, he began to succumb to the blood loss from the open wounds and unfinished work
+        on his body. 
+        
+        
+        
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~stats
+stats:
+    rank: 1
+    income: 0c
+    streetcreed:
+        current: 2
+        max: 3
+    xp: 13
+    wonded: -2
+    exhausted: 0
+    money: 6350c
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~skills
+skills:
+    agility:
+        value: 6
+        skills:
+            driving: 
+                value: 4
+            lockpicking:
+                value: 6
+            shooting: 
+                value: 6
+            stealth: 
+                value: 6
+    smarts:
+        value : 8
+        info: "Hacking over base value due to campaign progress"
+        skills:
+            hacking: 
+                value: 10
+                info: >
+                    +1 to hacking firewalls due to 'Cutter' edge.
+            notice: 
+                value: 4
+            streetwise: 
+                value: 6
+            programming: 
+                value: 8
+    strength:
+        value: 6
+        skills: {}
+    vigor:
+        value: 6
+        skills : {}
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~attribuets
+attributes:
+    pace: 0
+    running: 0
+    parry: 2
+    tough: 5
+    armour: 3
+    charisma: 0
+    guts: 0
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~tap
+tap:
+    firewall: 7
+    toughness: 1
+    ams: 0
+    armour: 0
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~edges
+edges:
+    - name: Cutter
+      info: +1 hacking firewalls
+    - name: Interface
+      info: +1 tap firewall 
+    - name : Hacker
+      info: If hacking a corp get bonus key information
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hinderances
+hinderances:
+    - name : Code of Honor
+      major: true
+      info: Has rules to live by
+    - name: Bad Repuration
+      info: People know thing went bad
+    - name: Black listed
+      info: 
+      info: A corp doesn't like you. (Not chimera)
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~gear
+gear:
+    - name: Harley Motorcycle
+      info: 1d4 driving AI
+      cost: 1000c
+    - name: Medium cal ammo
+      cost: ---
+      info: A normal amount
+    - name: Mesh id jammer
+      cost: ---
+      info: "Anarchy symbol, needs battery"
+    - name: "Tap: Bounty board" 
+      info: List of known fugitives
+      cost: 400/cpm
+    - name: "Tap: e-stream" 
+      info: Entertainment
+      cost: 50/cpm
+    - name: "Tap: Swapper protect"
+      info: +1 firewall
+      cost: 950/cpm
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~armaments
+armaments:
+    - name: Urban Punk 45acp smg
+      damage: 2d6+1
+      weight: 3
+      cost: 500c
+    - name: Urban Punk shillelagh hack stick
+      damage: 2d10
+      weight: 2
+      cost: 500c
+      info: Needs small battery to be used.
+    - name: Flashbang
+      damage: 2d10
+      weight: 0
+      cost: 500c
+      info: x3
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~augmentations
+augmentations:
+    - name: Data Carrier
+      info: Offline HDD storage
+      strain: 1
+    - name: Subdermal Armour
+      info: +1 Toughness
+      strain: 1
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~protection
+protection:
+    torso: Urban Punk combat jacket
+    head: 
+    arm: 
+    life support: 
+    leg: 
+    hazard sheild: 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~spending
+spending:
+    save kado:
+        earnings: 
+            - value: 5000c
+              info: Campaign progress
+            - value: 3750c 
+              info: Bounty
+            - value: 550c
+              info: Weapon loot sales
+            - value: 1 street cred capacity
+              info: bonus
+        spendings:
+            - value: 950c
+              info: "'Monthly' app fees"
+            - value: 1500c 
+              info: Hack stick
+            - value: 1500c
+              info: Cost of living
+            - value: 1 street cred 
+              info: Calling grips
+    kill buzzkill:
+        earnings:
+            - value: 5000c 
+              info: Campaign progress
+        spendings:
+            - value: 300c 
+              info: One normal suit
+            - value: 1 street cred
+              info: calling grips
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~notes
+notes:
+    save kado:
+        - shot security cameras
+        - didn't kill anyone
+        - untied kado
+    kill buzzkill:
+        - hacked BuzzKills building
+        - programmed face recognition tech
+        - heard of 'basalisc hack' making people go katatonic on the subway
+        - house got rigged with a 'slaymore'
+        - lost Shelia
+        - gut damage -1 dice to agility
+        - Missing nipple - compliments of the late BuzzKill
+        - download BuzzKills tap info to HDD
+        - "Dr Cheng fixed me up, fixed gut damage"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
