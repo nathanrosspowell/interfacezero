@@ -25,17 +25,25 @@ skills:
     agility:
         value: 6
         skills:
-            driving: 4
-            lockpicking: 6
-            shooting: 6
-            stealth: 6
+            driving: 
+                value: 4
+            lockpicking:
+                value: 6
+            shooting: 
+                value: 6
+            stealth: 
+                value: 6
     smarts:
         value : 8
         skills:
-            hacking: 10
-            notice: 4
-            streetwise: 6
-            programming: 8
+            hacking: 
+                value:10
+            notice: 
+                value: 4
+            streetwise: 
+                value: 6
+            programming: 
+                value: 8
     strength:
         value: 6
         skills: {}
