@@ -4,7 +4,7 @@ Interface Zero
 RPG digital stats
 -----------------
 
-[Interface Zero][interfacezero] is a cyberpunk themed pen and paper RPG. This repro takes advantages of the `gh-pages` feature of GitHub to provide a website that will be up to date every time a file is updated. The digitised chartacter sheets are layed out in the human friendly data formal [YAML][yaml].
+[Interface Zero][interfacezero] is a cyberpunk themed pen and paper RPG. This repro used the  `gh-pages` feature of GitHub to provide a website that will be up to date every time a file is updated. The digitised chartacter sheets are layed out in the human friendly data formal [YAML][yaml].
 
 
 How to add a character
@@ -13,7 +13,7 @@ Make a copy of one of the YAML files in the [gh-pages/yaml][yamlfolder] and dave
 
 When you are happy with it, add it to that folder. Finally add that file name to the list in this [Javascript file][jsfile].
 
-To get permission to write directly to this repro contact me.
+To get permission to write directly to this repro contact me @nathanrosspowell.
 
 
 How to edit YAML
