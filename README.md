@@ -13,7 +13,7 @@ Make a copy of one of the YAML files in the [gh-pages/yaml][yamlfolder] and dave
 
 When you are happy with it, add it to that folder. Finally add that file name to the list in this [Javascript file][jsfile].
 
-To get permission to write directly to this repro contact me @nathanrosspowell.
+To get permission to write directly to this repro contact [me][nathan].
 
 
 How to edit YAML
@@ -66,3 +66,4 @@ Technology used
 [jsfile]: https://github.com/nathanrosspowell/interfacezero/blob/gh-pages/js/yaml_lists.js "yaml_lists.js"
 [bootstrap]: https://github.com/twbs/bootstrap
 [jsyaml]: https://github.com/nodeca/js-yaml
+[nathan]: http://nathanrosspowell.com/about_me/ "Link to personal email"
