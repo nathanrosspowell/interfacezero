@@ -1,5 +1,5 @@
 var playerCharacters = [
       'trigger_finger',
-      "silverbeard"
+      'silverbeard'
     //, 'your_character_file'
 ];
