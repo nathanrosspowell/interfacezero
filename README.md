@@ -40,7 +40,7 @@ YAML files use significant whitespace (much like the Python programming language
  ```YAML
   key0: This is a string no need for quotes
   key1: "A string in quotes"
-  key2: 'another string in quotes"
+  key2: 'another string in quotes'
   key3: >
       This is a multiline string.
       So you can do as much as you like, as long as it is indented correctly
