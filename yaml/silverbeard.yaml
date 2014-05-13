@@ -76,71 +76,68 @@ attributes:
     armour: 3
     charisma: 0
     guts: 0
+    armor: 0
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~tap
 tap:
     firewall: 7
     toughness: 1
     ams: 0
-    armour: 0
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~edges
 edges:
-    - name: Cutter
-      info: +1 hacking firewalls
-    - name: Interface
-      info: +1 tap firewall 
-    - name : Hacker
-      info: If hacking a corp get bonus key information
+    - name: Augmented Warrior
+      info: +1 Parry +1 unarmed damage
+    - name: Arcane Background
+      info:  
+    - name : Martial Artist
+      info: 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hinderances
 hinderances:
-    - name : Code of Honor
+    - name : Debt
       major: true
-      info: Has rules to live by
-    - name: Bad Repuration
-      info: People know thing went bad
-    - name: Black listed
-      info: 
-      info: A corp doesn't like you. (Not chimera)
+      info: 500 extra living cost
+    - name: Code of Honour
+      info: TBD
+    - name: Secret
+      info: Was a corp security guard, then used for experimental illegal augment operation. Still has a kill
+            switch implanted via the corp, and they can track me.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~gear
 gear:
-    - name: Harley Motorcycle
-      info: 1d4 driving AI
-      cost: 1000c
-    - name: Medium cal ammo
-      cost: ---
-      info: A normal amount
-    - name: Mesh id jammer
-      cost: ---
-      info: "Anarchy symbol, needs battery"
-    - name: "Tap: Bounty board" 
-      info: List of known fugitives
-      cost: 400/cpm
-    - name: "Tap: e-stream" 
-      info: Entertainment
-      cost: 50/cpm
-    - name: "Tap: Swapper protect"
-      info: +1 firewall
-      cost: 950/cpm
+    - name: RAVENLOCKE BEACHHEAD FIRST RESPONDER ARMOR
+      info: "RI’s first responder armor is used by primary back-up units,
+            first responders are linked to the “officer down” system, they
+            know they need to be ready when it hits the fan. Includes an
+            internal communications array, with “officer down” biosensor
+            uplink and shoulder-mount camcorder with uplink." 
+            
+    - name: EMERGENCY SUPPORT PATCH
+      info: +2 to Healing rolls
+    
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~armaments
 armaments:
-    - name: Urban Punk 45acp smg
-      damage: 2d6+1
+    - name: AS Foley Arms Watchdog
+      info: semi-auto, AP
+      damage: 2d8
       weight: 3
-      cost: 500c
-    - name: Urban Punk shillelagh hack stick
-      damage: 2d10
+    - name: WASTELAND TRADERS EVISCERATOR CHAIN SWORD
+      damage: str+d10
+      weight: 10
+      info: requires battery, AP.
+    - name: BLACK KNIGHT INDUSTRIES SHOTFIST
+      damage: str+d4 + 3d6
+      weight: 9
+    - name: AGA Thunder shotgun
+      range: 10/20/40
+      info: +2 stealth to carry.
+      damage: 1-3d6
+      weight: 9
+    - name: HE-40, High Explosive * 2
+      damage: 4d8
       weight: 2
-      cost: 500c
-      info: Needs small battery to be used.
-    - name: Flashbang
-      damage: 2d10
-      weight: 0
-      cost: 500c
-      info: x3
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~augmentations
 augmentations:
@@ -153,7 +150,7 @@ augmentations:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~protection
 protection:
-    torso: Urban Punk combat jacket
+    torso: RAVENLOCKE BEACHHEAD FIRST RESPONDER ARMOR +4
     head: 
     arm: 
     life support: 
@@ -162,50 +159,29 @@ protection:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~spending
 spending:
-    save kado:
-        earnings: 
-            - value: 5000c
-              info: Campaign progress
-            - value: 3750c 
-              info: Bounty
-            - value: 550c
-              info: Weapon loot sales
-            - value: 1 street cred capacity
-              info: bonus
-        spendings:
-            - value: 950c
-              info: "'Monthly' app fees"
-            - value: 1500c 
-              info: Hack stick
-            - value: 1500c
-              info: Cost of living
-            - value: 1 street cred 
-              info: Calling grips
-    kill buzzkill:
-        earnings:
-            - value: 5000c 
-              info: Campaign progress
-        spendings:
-            - value: 300c 
-              info: One normal suit
-            - value: 1 street cred
-              info: calling grips
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~notes
 notes:
-    save kado:
-        - shot security cameras
-        - didn't kill anyone
-        - untied kado
-    kill buzzkill:
-        - hacked BuzzKills building
-        - programmed face recognition tech
-        - heard of 'basalisc hack' making people go katatonic on the subway
-        - house got rigged with a 'slaymore'
-        - lost Shelia
-        - gut damage -1 dice to agility
-        - Missing nipple - compliments of the late BuzzKill
-        - download BuzzKills tap info to HDD
-        - "Dr Cheng fixed me up, fixed gut damage"
+    
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Powers
+Powers:
+    
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Vehicles
+Vehicles:
+    - name: TOYOTA ‘ LOCUST’ QUAD TURBO JUMP BIKE
+      cost: 50000c
+      info: Voted the hottest bike by Street Racer Weekly for the 4th
+            straight year, the Toyota Locust Quad Turbo JUMP bike is a
+            jump racer’s dream come true! Our patented ACR Titan JUMP
+            system (+1 to Driving when making turbo jumps) comes standard
+            on all Locusts and our titanium coil JUMP springs and
+            sleek tri-foil chassis ensure a sweet landing, so you can be
+            at the head of the pack. (See the Road Rage supplement for
+            more JUMP Bikes, and JUMP Bike racing rules).
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
