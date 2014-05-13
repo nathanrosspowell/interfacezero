@@ -31,9 +31,9 @@ YAML files use significant whitespace (much like the Python programming language
   ```YAML
   key: 1
 
-  anotherKey: 2
+  anotherKey: 2.0
   
-  Another Key: 2
+  Another Key: Three
   ```
 * A list:
   ```YAML
