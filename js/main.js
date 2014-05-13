@@ -17,7 +17,7 @@ $(window).bind("load", function() {
     catch(err){
         var x = "";
         x += '<h4>Javascript Error</h4>';
-        x += '<p>Error description:</p>
+        x += '<p>Error description:</p>';
         x += '<p>' + err.message + '</p>';
         $('#interfacezero-warning').html(x);
     }
