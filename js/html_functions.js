@@ -6,7 +6,7 @@ function characterId( name ){
 function skillsId( name ){
     return name + "-skills";
 }
-function statsId( name ){
+function identificationId( name ){
     return name + "-stats";
 }
 function tapId( name ){
@@ -14,9 +14,6 @@ function tapId( name ){
 }
 function edgesId( name ){
     return name + "-edges";
-}
-function accordionId( name ){
-    return name + "-accordion";
 }
 function armamentsId( name ){
     return name + "-armaments";
@@ -33,9 +30,6 @@ function protectionId( name ){
 function spendingId( name ){
     return name + "-spending";
 }
-function campaignsId( name ){
-    return name + "-campaigns";
-}
 function notesId( name ){
     return name + "-notes";
 }
@@ -43,11 +37,17 @@ function notesId( name ){
 function makeHeading( text ){
    return "<h3>" + text + "</h3>";
 }
+function replaceSpaces( text ){
+    return text.replace(/\s+/g, '');
+}
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function title( text ){
    return text.toLowerCase().replace(/\b[a-z]/g,function(letter){
         return letter.toUpperCase();
    });
+}
+function shortName( myJ ){
+    return myJ["id"]["name"].split(" ")[ 0 ];
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeTable( headings, itemsFunction, useStripes ){
@@ -59,13 +59,15 @@ function makeTable( headings, itemsFunction, useStripes ){
         x += '  table-striped';
     }
     x += '  ">';
-    x += '    <thead>';
-    x += '      <tr>';
-    $.each(headings,function(index){
-        x += '    <th>' + headings[index] +'</th>';
-    });
-    x += '      </tr>';
-    x += '    </thead>';
+    if (headings.length > 0){
+        x += '<thead>';
+        x += '  <tr>';
+        $.each(headings,function(index){
+            x += '<th>' + headings[index] +'</th>';
+        });
+        x += '  </tr>';
+        x += '</thead>';
+    }
     x += '    <tbody>';
     x +=        itemsFunction();
     x += '    </tbody>';
@@ -82,7 +84,11 @@ function makeVerticalTable( pairs ){
         var pair = pairs[index];
         x += '<tr>';
         x += '  <th scope="row">'+pair[0]+'</th>';
-        x += '  <td>'+pair[1]+'</td>';
+        x += '  <td>';
+        if (pair[1] !== null){
+            x += pair[1];
+        }
+        x += '  </td>'
         x += '</tr>';
     });
     x += '  </table>';
@@ -90,19 +96,20 @@ function makeVerticalTable( pairs ){
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function makeInfoButton( id, title, content ){
+function makeModal( id, button, size, title, content ){
     var x = "";
-    if ( typeof content !== 'undefined' ){
-        x += '<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#' + id +'">';
-        x +=  '  <span class="glyphicon glyphicon-list-alt"></span>';
+    if (typeof content !== 'undefined' && content !== null){
+        x += '<button class="btn btn-primary btn-'+size+'" data-toggle="modal" data-target="#' + id +'">';
+        x +=     button;
         x += '</button>';
-        x += '<div id="' + id + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
-        x += '  <div class="modal-dialog modal-sm">';
+        x += '<div id="' + id + '" class="modal fade bs-example-modal-'+size+'" tabindex="-1"';
+        x +=     ' role="dialog" aria-labelledby="'+id+'" aria-hidden="true">';
+        x += '  <div class="modal-dialog modal-'+size+'">';
         x += '    <div class="modal-content">';
         x += '      <div class="modal-header">';
         x += '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
         x += '        <h4 class="modal-title">';
-        x +=            title
+        x +=            title;
         x += '        </h4>';
         x += '      </div>';
         x += '      <div class="modal-body">';
@@ -115,30 +122,16 @@ function makeInfoButton( id, title, content ){
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function makeInfoButtonBig( id, title, content ){
-    var x = "";
-    var modal = "";
-    if ( typeof content !== 'undefined' ){
-        x += '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#' + id +'">';
-        x +=  title;
-        x += '</button>';
-        modal += '<div id="' + id + '" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
-        modal += '  <div class="modal-dialog modal-lg">';
-        modal += '    <div class="modal-content">';
-        modal += '      <div class="modal-header">';
-        modal += '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-        modal += '        <h4 class="modal-title">';
-        modal +=            title
-        modal += '        </h4>';
-        modal += '      </div>';
-        modal += '      <div class="modal-body">';
-        modal +=          content;
-        modal += '      </div>';
-        modal += '    </div>';
-        modal += '  </div>';
-        modal += '</div>';
-    }
-    return [x,modal];
+function makeInfoModal( id, title, content ){
+    var button = '<span class="glyphicon glyphicon-list-alt"></span>';
+    var size = 'xs';
+    return makeModal( id, button, size, title, content );
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function makeBigModal( id, button, content ){
+    var title = button;
+    var size = 'lg';
+    return makeModal( id, button, size, title, content );
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeCharacterDescription(character,race,occupation,xp ){
@@ -165,10 +158,10 @@ function makeCharacterDescription(character,race,occupation,xp ){
             break;
         }
     }
-    return '<p>' + character + ' is ' + an + ' <u>' + level + '</u> <u>' 
+    return character + ' is ' + an + ' <u>' + level + '</u> <u>' 
         + race + '</u> <u>' 
         + occupation + '</u> with <u>' 
-        + xp + '</u> experience points.</p>';
+        + xp + '</u> experience points.';
 };
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeXpBar( xp ){
@@ -206,18 +199,18 @@ function createCharacterPanel( name, myJ ){
     x += '<div class="panel panel-default">';
     x += '  <div class="panel-heading">';
     x += '    <h3 class="panel-title">';
-    x += '      <span class="glyphicon glyphicon-user"></span>';
+    x += '      <span class="glyphicon glyphicon-user"></span>&nbsp';
     x +=        myJ["id"]["name"];
     x += '    </h3>';
     x += '  </div>'; // Close panel-heading
     x += '  <div class="panel-body">';
-    x +=        idTable( name, myJ );
+    x +=        identification( name, myJ );
     x += '      <hr/>';
-    x +=        tapTable( name, myJ );
+    x +=        tap( name, myJ );
     x += '      <hr/>';
     x +=        edges( name, myJ );
     x += '      <hr/>';
-    x +=        statsAccordion( name, myJ );
+    x +=        skills( name, myJ );
     x += '      <hr/>';
     x +=        augmentations( name, myJ );
     x += '      <hr/>';
@@ -229,20 +222,25 @@ function createCharacterPanel( name, myJ ){
     x += '      <hr/>';
     x +=        spending( name, myJ );
     x += '      <hr/>';
-    x +=        campaigns( name, myJ );
-    x += '      <hr/>';
     x +=        notes( name, myJ );
     x += '  </div>';
     x += '</div>';
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function idTable( name, myJ ){
+function identification( name, myJ ){
     var map = myJ["stats"];
     var x = "";
-    x += '<a class="anchor" id="' + statsId( name ) +'"></a>';
-    x += makeHeading("Stats");
-    x += makeCharacterDescription(myJ["id"]["name"],myJ["id"]["race"],myJ["id"]["occupation"],myJ["stats"]["xp"]);
+    x += '<a class="anchor" id="' + identificationId( name ) +'"></a>';
+    x+= '<p>';
+    x += makeCharacterDescription(myJ["id"]["name"],myJ["id"]["race"],myJ["id"]["occupation"],myJ["stats"]["xp"]); 
+    x+= '&nbsp';
+    x += makeModal(name+"-backstory"
+        ,shortName(myJ)+"'s Backstory"
+        , "xs"
+        , myJ["id"]["name"]+"'s Backstory"
+        ,myJ["id"]["backstory"]);
+    x+= '</p>'
     x += makeXpBar(myJ["stats"]["xp"]);
     x += makeVerticalTable( [
           ["Money", map["money"]]
@@ -254,7 +252,7 @@ function idTable( name, myJ ){
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function tapTable( name, myJ ){
+function tap( name, myJ ){
     var map = myJ["tap"];
     var x = "";
     x += '<a class="anchor" id="' + tapId( name ) +'"></a>';
@@ -262,8 +260,8 @@ function tapTable( name, myJ ){
     x += makeVerticalTable([
           ["Firewall", map["firewall"]]
         , ["Toughness", map["toughness"]]
-        , ["ams", map["toughness"]]
-        , ["armour", map["toughness"]]
+        , ["AMS", map["toughness"]]
+        , ["Armour", map["toughness"]]
     ]);
     return x;
 }
@@ -272,21 +270,28 @@ function edges( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + edgesId( name ) +'"></a>';
     x += makeHeading('Edges and Hinderances');
-    x += makeTable( ["","Name","Info",],function(){
+    x += makeTable( [],function(){
         var y = "";
         $.each(myJ["edges"],function(index){
             var map = myJ["edges"][index];
+            var id = replaceSpaces(name+'-edge-'+map["name"]);
             y += '<tr class="success">';
+            y += '  <td>'
+            y += makeInfoModal(id,"Edge: "+map["name"],map["info"]);
+            y += '  </td>'
             y += '  <td>'
             y += '    <span class="glyphicon glyphicon-plus"></span>';
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
-            y += '  <td>' + map["info"] + '</td>';
             y += '</tr>';
         });
         $.each(myJ["hinderances"],function(index){
             var map = myJ["hinderances"][index];
+            var id = replaceSpaces(name+'-hinderances-'+map["name"]);
             y += '<tr class="danger">';
+            y += '  <td>'
+            y += makeInfoModal(id,"Hinderance: "+map["name"],map["info"]);
+            y += '  </td>'
             y += '  <td>'
             y += '    <span class="glyphicon glyphicon-minus"></span>';
             if (map["major"] == 1){
@@ -294,7 +299,6 @@ function edges( name, myJ ){
             }
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
-            y += '  <td>' + map["info"] + '</td>';
             y += '</tr>';
         });
         return y;
@@ -302,35 +306,35 @@ function edges( name, myJ ){
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function statsAccordion( name, myJ ){
-    var accordion = accordionId( name )
+function skills( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + skillsId( name ) +'"></a>';
     x += makeHeading("Skills");
     x += '<div class="panel-group">';
     $.each(myJ["skills"],function(key,value){
         var anchor = name + "-" + key;
-        x += statEntry( key, value, accordion, anchor );
+        var id = skillsId( name )+"-" + key
+        x += skillEntry( key, value, id, anchor );
     });
     x += '</div>';
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function statEntry( key, value, accordion, anchor ){
+function skillEntry( key, value, id, anchor ){
     var x = "";
-    x += '<div class="panel-group" id="' + accordion + '">';
+    x += '<div class="panel-group" id="' + id + '">';
     x += '  <div class="panel panel-default">';
     x += '    <div class="panel-heading">';
     x += '      <h4 class="panel-title">';
-    x += '        <a data-toggle="collapse" data-parent="#"' + accordion + '"" href="#' + anchor + '">';
-    x += '          <span class="badge">' + value["value"] + '</span>';
-    x += '          <span class="glyphicon glyphicon-stat"></span>' + title(key);
+    x += '        <a data-toggle="collapse" data-parent="#"' + id + '"" href="#' + anchor + '">';
+    x += '          <span class="glyphicon glyphicon-stats"></span>&nbsp' + title(key);
+    x += '          <span class="badge btn pull-right">' + value["value"] + '</span>';
     x += '        </a>';
     x += '      </h4>';
     x += '    </div>';
     x += '    <div id="' + anchor + '" class="panel-collapse collapse">';
     x += '      <div class="panel-body">';
-    x +=            attributeItems( value );
+    x +=            attributeList( value["skills"] );
     x += '      </div>';
     x += '    </div>';
     x += '  </div>';
@@ -338,16 +342,20 @@ function statEntry( key, value, accordion, anchor ){
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function attributeItems( value ){
+function attributeList( map ){
     var x = "";
-    $.each(value["skills"],function(key,value){
+    if (Object.keys(map).length>0){
         x += '<ul class="list-group">';
-        x += '  <li class="list-group-item">';
-        x += '    <span class="badge">' + value + '</span>';
-        x +=      title(key);
-        x += '  </li>';
+        $.each(map,function(key,value){
+            x += '  <li class="list-group-item">';
+            x += '    <span class="badge">' + value + '</span>';
+            x +=      title(key);
+            x += '  </li>';
+        });
         x += '</ul>';
-    });
+    } else {
+        x += '<p>No skills, <code>-2</code> penalty.</p>';
+    }
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -355,17 +363,17 @@ function armaments( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + armamentsId( name ) +'"></a>';
     x += makeHeading('Armaments');
-    x += makeTable( ["Name","Damage","Weight",""],function(){
+    x += makeTable( ["","Name","Damage","Weight"],function(){
         var y = "";
         $.each(myJ["armaments"],function(index){
             var map = myJ["armaments"][ index ];
             y += '<tr>';
+            y += '  <td>'
+            y += makeInfoModal( name+"-weapon-"+index, "Armament: "+map["name"], map["info"] );
+            y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
             y += '  <td>' + map["damage"] + '</td>';
             y += '  <td>' + map["weight"] + '</td>';
-            y += '  <td>'
-            y += makeInfoButton( name+"-weapon-"+index, "Notes: "+map["name"], map["notes"] );
-            y += '  <td>'
             y += '</tr>';
         });
         return y;
@@ -377,14 +385,16 @@ function augmentations( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + augmentationsId( name ) +'"></a>';
     x += makeHeading("Augmentations");
-    x += makeTable( ["Name","Strain","Info"],function(){
+    x += makeTable( ["","Name","Strain",],function(){
         var y = "";
         $.each(myJ["augmentations"],function(index){
             var map = myJ["augmentations"][ index ];
             y += '  <tr>';
+            y += '  <td>'
+            y += makeInfoModal( name+"-augmentations-"+index, "Augmentation: "+map["name"], map["info"] );
+            y += '  </td>'
             y += '    <td>' + map["name"] + '</td>';
             y += '    <td>' + map["strain"] + '</td>';
-            y += '    <td>' + map["info"] + '</td>';
             y += '  </tr>';
         });
         return y;
@@ -396,19 +406,21 @@ function gear( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + gearId( name ) +'"></a>';
     x += makeHeading("Gear");
-    x += makeTable( ["Name","Cost","Info"],function(){
+    x += makeTable( ["","Name","Cost"],function(){
         var y = "";
         $.each(myJ["gear"],function(index){
             var map = myJ["gear"][ index ];
-            y += '  <tr>';
-            y += '    <td>' + map["name"] + '</td>';
-            y += '    <td>'
+            y += '<tr>';
+            y += '  <td>'
+            y += makeInfoModal( name+"-gear-"+index, "Gear: "+map["name"], map["info"] );
+            y += '  </td>'
+            y += '  <td>' + map["name"] + '</td>';
+            y += '  <td>'
             if ( typeof map["cost"] !== 'undefined'){
-               y +=      map["cost"]
+               y +=   map["cost"]
             }
-            y += '    </td>'
-            y += '    <td>' + map["info"] + '</td>';
-            y += '  </tr>';
+            y += '  </td>'
+            y += '</tr>';
         });
         return y;
     });
@@ -435,21 +447,65 @@ function spending( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + spendingId( name ) +'"></a>';
     x += makeHeading("Spending");
+    $.each(myJ["spending"],function(key,value){
+        var anchor = replaceSpaces(name + "-" + key);
+        var id = replaceSpaces( spendingId( name )+"-" + key)
+        x += spendingEntry( key, value, id, anchor );
+    });
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function campaigns( name, myJ ){
+function spendingEntry( key, value, id, anchor ){
     var x = "";
-    x += '<a class="anchor" id="' + campaignsId( name ) +'"></a>';
-    x += makeHeading('Campaigns');
-    x += '<p>';
-    x += '  Campaigns: ToDo';
-    x += '</p>';
+    x += '<div class="panel-group" id="' + id + '">';
+    x += '  <div class="panel panel-default">';
+    x += '    <div class="panel-heading">';
+    x += '      <h4 class="panel-title">';
+    x += '        <a data-toggle="collapse" data-parent="#"' + id + '"" href="#' + anchor + '">';
+    x += '          <span class="glyphicon glyphicon-th-list"></span>&nbsp' + title(key);
+    x += '        </a>';
+    x += '      </h4>';
+    x += '    </div>';
+    x += '    <div id="' + anchor + '" class="panel-collapse collapse">';
+    x += '      <div class="panel-body">';
+    x +=            spendingList( value["earnings"],value["spendings"] );
+    x += '      </div>';
+    x += '    </div>';
+    x += '  </div>';
+    x += '</div>';
+    return x;
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function spendingList( earnings, spendings ){
+    var x = "";
+    x += makeTable( [],function(){
+        var y = "";
+        $.each(earnings,function(index){
+            var map = earnings[index];
+            y += '<tr class="success">';
+            y += '  <td>'
+            y += '    <span class="glyphicon glyphicon-plus"></span>';
+            y += '  </td>'
+            y += '  <td>' + map["value"] + '</td>';
+            y += '  <td>' + map["info"] + '</td>';
+            y += '</tr>';
+        });
+        $.each(spendings,function(index){
+            var map = spendings[index];
+            y += '<tr class="danger">';
+            y += '  <td>'
+            y += '    <span class="glyphicon glyphicon-minus"></span>';
+            y += '  </td>'
+            y += '  <td>' + map["value"] + '</td>';
+            y += '  <td>' + map["info"] + '</td>';
+            y += '</tr>';
+        });
+        return y;
+    });
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function notes( name, myJ ){
-    var modals = [];
     var x = "";
     var notes = name + "-notes";
     var anchor = name + "-notes-id";
@@ -457,9 +513,7 @@ function notes( name, myJ ){
     x += makeHeading('Notes');
     x += '<ul class="list-inline">';
     $.each(myJ["notes"],function(key,list){
-        var id = name + '-notes-' + key;
-        id = id.replace(/\s+/g, ''); // strip spaces
-        //
+        var id = replaceSpaces(name + '-notes-' + key);
         var y = "";
         y += '<ul class="list-group">';
         $.each(list,function(index){
@@ -469,30 +523,23 @@ function notes( name, myJ ){
         });
         y += '</ul>';
         //
-        var modal = makeInfoButtonBig(id,title(key),y);
         x += '<li>'
-        x +=    modal[0]
+        x += makeBigModal(id,title(key),y);
         x += '</li>'
-        modals.push(modal[1]);
     });
     x += '</ul>';
-    $.each(modals,function(index){
-        x += modals[index];
-    });
     return x;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function createCharacterDropdown( name, myJ ) {
-    var shortName = myJ["id"]["name"].split(" ")[ 0 ];
     var x = "";
     x += '<li class="dropdown">';
-    x += '  <a href="#" class="dropdown-toggle" data-toggle="dropdown">' + shortName + '<b class="caret"></b></a>';
+    x += '  <a href="#" class="dropdown-toggle" data-toggle="dropdown">' + shortName(myJ) + '<b class="caret"></b></a>';
     x += '  <ul class="dropdown-menu">';
     x += '    <li><a href="#' + characterId(name)+ '">' + myJ["id"]["name"] + '</a></li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Stats</li>';
-    x += '    <li><a href="#' + statsId(name)+ '">Stats</a></li>';
     x += '    <li><a href="#' + tapId(name)+ '">Tap</a></li>';
     x += '    <li><a href="#' + edgesId(name)+ '">Edges and Hinderances</a></li>';
     x += '    <li><a href="#' + skillsId(name)+ '">Skills</a></li>';
@@ -505,7 +552,6 @@ function createCharacterDropdown( name, myJ ) {
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Back story</li>';
     x += '    <li><a href="#' + spendingId(name)+ '">Spending</a></li>';
-    x += '    <li><a href="#' + campaignsId(name)+ '">Campaigns</a></li>';
     x += '    <li><a href="#' + notesId(name)+ '">Notes</a></li>';
     x += '  </ul>';
     x += '</li>';
