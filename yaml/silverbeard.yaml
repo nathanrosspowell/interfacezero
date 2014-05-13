@@ -96,6 +96,8 @@ edges:
             subject to the Unarmed Defender rule (page 76). With a
             successful unarmed attack, he adds +d4 to his Strength roll
             (as if he were using a small weapon)."
+    - name: Trademark Weapon
+      info: +1 to his Fighting, Shooting, or Throwing
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hinderances
 hinderances:
