@@ -2,7 +2,7 @@
 // This is what executes
 $(window).bind("load", function() {
     try{
-        playerCharacters.forEach(function(errorlololololol){
+        playerCharacters.forEach(function(yamlFile){
             $.ajax({
                 url: 'yaml/' + yamlFile + '.yaml',
                 async: false,
