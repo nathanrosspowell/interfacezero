@@ -211,11 +211,6 @@ Powers:
         it two steps. A Trait cannot be lowered below a d4. Multiple
         castings stack, though the caster must keep track of when
         each casting expires as usual.
-    AdditionalTargets: The power may affect an additional
-        target for every additional Power Point spent, up to a maximum
-        of five targets. All targets share the same effect and Trait
-        affected.
-    
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Vehicles
