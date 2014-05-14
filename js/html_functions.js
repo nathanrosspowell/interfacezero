@@ -222,6 +222,8 @@ function createCharacterPanel( name, myJ ){
     x += '      <hr/>';
     x +=        protection( name, myJ );
     x += '      <hr/>';
+    x +=        powers( name, myJ );
+    x += '      <hr/>';
     x +=        armaments( name, myJ );
     x += '      <hr/>';
     x +=        gear( name, myJ );
@@ -626,6 +628,7 @@ function createCharacterDropdown( name, myJ ) {
     x += '    <li><a href="#' + protectionId(name)+ '">Protection</a></li>';
     x += '    <li><a href="#' + armamentsId(name)+ '">Weapons</a></li>';
     x += '    <li><a href="#' + gearId(name)+ '">Gear</a></li>';
+    x += '    <li><a href="#' + powersId(name)+ '">Gear</a></li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Back story</li>';
     x += '    <li><a href="#' + contactsId(name)+ '">Contacts</a></li>';
