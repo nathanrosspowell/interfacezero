@@ -243,4 +243,15 @@ Vehicles:
         at the head of the pack. (See the Road Rage supplement for
         more JUMP Bikes, and JUMP Bike racing rules).
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Contacts
+Contacts:
+    - name: Boomer
+      info: >
+        Left chicago.
+    - name: Dr Cheng
+      info: >
+        Street Doc. Can repair, install or remove augments. Still in debt to him
+        for the initial fix up.
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
