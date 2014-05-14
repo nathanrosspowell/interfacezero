@@ -174,10 +174,10 @@ spending:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~notes
 notes:
-    save kado:
-        - shot security cameras
-        - didn't kill anyone
-        - untied kado
+    Athena:
+        - Stopped asssination attempt on Athena at club Seismic.
+        - Lost club alot of money.
+        
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~powers
@@ -256,5 +256,8 @@ contacts:
     Dr Cheng:
         - Street Doc. Can repair, install or remove augments.
         - Still in debt to him for the initial fix up.
+    Arkady Voss:
+        - Owner of club Seismic, where Samson is a bouncer.
+        - Requested Samson to be on extra security detail for Athena visit.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
