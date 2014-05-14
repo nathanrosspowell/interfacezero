@@ -551,6 +551,29 @@ function notes( name, myJ ){
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function contacts( name, myJ ){
     var x = "";
+    var notes = name + "-contacts";
+    var anchor = name + "-contacts-id";
+    x += '<a class="anchor" id="' + contactsId( name ) +'"></a>';
+    x += makeHeading('Contacts');
+    if ( myJ["contacts"] !== 'undefined' && myJ["contacts"] != null){
+        x += '<ul class="list-inline">';
+        $.each(myJ["contacts"],function(key,list){
+            var id = replaceSpaces(name + '-contacts-' + key);
+            var y = "";
+            y += '<ul class="list-group">';
+            $.each(list,function(index){
+                y += '<li class="list-group-item">';
+                y +=    list[index];
+                y += '</li>';
+            });
+            y += '</ul>';
+            //
+            x += '<li>'
+            x += makeBigModal(id,title(key),y);
+            x += '</li>'
+        });
+        x += '</ul>';
+    }
     return x;
 }
 
