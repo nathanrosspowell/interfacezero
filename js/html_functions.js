@@ -455,11 +455,13 @@ function spending( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + spendingId( name ) +'"></a>';
     x += makeHeading("Spending");
-    $.each(myJ["spending"],function(key,value){
-        var anchor = replaceSpaces(name + "-" + key);
-        var id = replaceSpaces( spendingId( name )+"-" + key)
-        x += spendingEntry( key, value, id, anchor );
-    });
+    if ( myJ["spending"] !== 'undefined' && myJ["spending"] != null ){
+        $.each(myJ["spending"],function(key,value){
+            var anchor = replaceSpaces(name + "-" + key);
+            var id = replaceSpaces( spendingId( name )+"-" + key)
+            x += spendingEntry( key, value, id, anchor );
+        });
+    }
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -519,23 +521,25 @@ function notes( name, myJ ){
     var anchor = name + "-notes-id";
     x += '<a class="anchor" id="' + notesId( name ) +'"></a>';
     x += makeHeading('Notes');
-    x += '<ul class="list-inline">';
-    $.each(myJ["notes"],function(key,list){
-        var id = replaceSpaces(name + '-notes-' + key);
-        var y = "";
-        y += '<ul class="list-group">';
-        $.each(list,function(index){
-            y += '<li class="list-group-item">';
-            y +=    list[index];
-            y += '</li>';
+    if ( myJ["notes"] !== 'undefined' && myJ["notes"] != null){
+        x += '<ul class="list-inline">';
+        $.each(myJ["notes"],function(key,list){
+            var id = replaceSpaces(name + '-notes-' + key);
+            var y = "";
+            y += '<ul class="list-group">';
+            $.each(list,function(index){
+                y += '<li class="list-group-item">';
+                y +=    list[index];
+                y += '</li>';
+            });
+            y += '</ul>';
+            //
+            x += '<li>'
+            x += makeBigModal(id,title(key),y);
+            x += '</li>'
         });
-        y += '</ul>';
-        //
-        x += '<li>'
-        x += makeBigModal(id,title(key),y);
-        x += '</li>'
-    });
-    x += '</ul>';
+        x += '</ul>';
+    }
     return x;
 }
 

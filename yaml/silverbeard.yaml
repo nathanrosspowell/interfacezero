@@ -17,8 +17,6 @@ id:
         His almost dead body was found by a Dr Cheng, a street doc, who makes a living patching up street thugs and runners. Cheng put him back together, and
         as payment Samson would run security for the Docs shop, intimidating those who couldnt pay, or undoing the fix up work for those
         who tried to dodge a payment.
-        
-        
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~stats
 stats:
@@ -48,12 +46,9 @@ skills:
                 value: 6
     smarts:
         value : 8
-        info: "Hacking over base value due to campaign progress"
         skills:
             hacking: 
                 value: 10
-                info: >
-                    +1 to hacking firewalls due to 'Cutter' edge.
             notice: 
                 value: 4
             streetwise: 
@@ -91,11 +86,12 @@ edges:
     - name: Arcane Background
       info: POWERS!
     - name: Martial Artist
-      info: "This character is highly trained in hand-to-hand fighting.
-            He is never considered unarmed in combat and so is never
-            subject to the Unarmed Defender rule (page 76). With a
-            successful unarmed attack, he adds +d4 to his Strength roll
-            (as if he were using a small weapon)."
+      info: >
+        This character is highly trained in hand-to-hand fighting.
+        He is never considered unarmed in combat and so is never
+        subject to the Unarmed Defender rule (page 76). With a
+        successful unarmed attack, he adds +d4 to his Strength roll
+        (as if he were using a small weapon)."
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hinderances
 hinderances:
@@ -105,18 +101,19 @@ hinderances:
     - name: Code of Honour
       info: TBD
     - name: Secret
-      info: Was a corp security guard, then used for experimental illegal augment operation. Still has a kill
-            switch implanted via the corp, and they can track me.
+      info: >
+        Was a corp security guard, then used for experimental illegal augment operation. Still has a kill
+        switch implanted via the corp, and they can track me.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~gear
 gear:
     - name: RAVENLOCKE BEACHHEAD FIRST RESPONDER ARMOR
-      info: "RI’s first responder armor is used by primary back-up units,
-            first responders are linked to the “officer down” system, they
-            know they need to be ready when it hits the fan. Includes an
-            internal communications array, with “officer down” biosensor
-            uplink and shoulder-mount camcorder with uplink." 
-            
+      info: >
+        RI’s first responder armor is used by primary back-up units,
+        first responders are linked to the “officer down” system, they
+        know they need to be ready when it hits the fan. Includes an
+        internal communications array, with “officer down” biosensor
+        uplink and shoulder-mount camcorder with uplink." 
     - name: EMERGENCY SUPPORT PATCH
       info: +2 to Healing rolls
     
@@ -124,13 +121,13 @@ gear:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~armaments
 armaments:
     - name: AS Foley Arms Watchdog
-      info: semi-auto, AP
+      info: "semi-auto, AP"
       damage: 2d8
       weight: 3
     - name: WASTELAND TRADERS EVISCERATOR CHAIN SWORD
       damage: str+d10
       weight: 10
-      info: requires battery, AP.
+      info: "requires battery, AP."
     - name: BLACK KNIGHT INDUSTRIES SHOTFIST
       damage: str+d4 + 3d6
       weight: 9
@@ -139,7 +136,7 @@ armaments:
       info: +2 stealth to carry.
       damage: 1-3d6
       weight: 9
-    - name: HE-40, High Explosive * 2
+    - name: "HE-40, High Explosive * 2"
       damage: 4d8
       weight: 2
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -155,9 +152,10 @@ augmentations:
       info: Ligament Enhancement adds 4” to the character’s Pace.
       strain: 0
     - name: NIGHT VISION OPTICS
-      info: "Low light vision ignores penalties for Dim and Dark
-            lighting, allowing the creature to see in all but pitch black
-            conditions."
+      info:  >
+        Low light vision ignores penalties for Dim and Dark
+        lighting, allowing the creature to see in all but pitch black
+        conditions."
       strain: 0
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~protection
@@ -184,47 +182,47 @@ Powers:
       Power Points: 2
       Range: Touch
       Duration: 3 (1/round)
-      Trappings: A mystical glow, hardened skin, ethereal armor,
-                a mass of insects or worms.
-                Armor creates a field of magical protection around a
-                character or an actual shell of some sort, effectively giving the
-                target Armor. Success grants the recipient 2 points of Armor.
-                A raise grants 4 points of Armor.
-                Whether the armor is visible or not depends largely on the
-                trapping.
-                
+      Trappings: >
+        A mystical glow, hardened skin, ethereal armor,
+        a mass of insects or worms.
+        Armor creates a field of magical protection around a
+        character or an actual shell of some sort, effectively giving the
+        target Armor. Success grants the recipient 2 points of Armor.
+        A raise grants 4 points of Armor.
+        Whether the armor is visible or not depends largely on the
+        trapping.
     - name: Boost/Lower Trait
       Rank: Novice
       Power Points: 2
       Range: Smarts
       Duration: 3 (1/round)
-      Trappings: Physical change, glowing aura, potions.
-                    This power allows a character to increase any of a target’s
-                    Traits by one die type for a standard success, or by two with a
-                    raise. The affected Trait can exceed d12. Each step over d12
-                    adds +1 to his Trait total. For example, a raise on someone
-                    who already has a d12 in the affected Trait grants him d12+2
-                    for the duration of the power.
-                    The power can also be used to lower an opponent’s Trait.
-                    This is an opposed roll against the victim’s Spirit. Success
-                    lowers any Trait of the caster’s choice one step, a raise lowers
-                    it two steps. A Trait cannot be lowered below a d4. Multiple
-                    castings stack, though the caster must keep track of when
-                    each casting expires as usual.
+      Trappings: >
+        Physical change, glowing aura, potions.
+        This power allows a character to increase any of a target’s
+        Traits by one die type for a standard success, or by two with a
+        raise. The affected Trait can exceed d12. Each step over d12
+        adds +1 to his Trait total. For example, a raise on someone
+        who already has a d12 in the affected Trait grants him d12+2
+        for the duration of the power.
+        The power can also be used to lower an opponent’s Trait.
+        This is an opposed roll against the victim’s Spirit. Success
+        lowers any Trait of the caster’s choice one step, a raise lowers
+        it two steps. A Trait cannot be lowered below a d4. Multiple
+        castings stack, though the caster must keep track of when
+        each casting expires as usual.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Vehicles
 Vehicles:
     - name: TOYOTA ‘ LOCUST’ QUAD TURBO JUMP BIKE
       cost: 50000c
-      info: Voted the hottest bike by Street Racer Weekly for the 4th
-            straight year, the Toyota Locust Quad Turbo JUMP bike is a
-            jump racer’s dream come true! Our patented ACR Titan JUMP
-            system (+1 to Driving when making turbo jumps) comes standard
-            on all Locusts and our titanium coil JUMP springs and
-            sleek tri-foil chassis ensure a sweet landing, so you can be
-            at the head of the pack. (See the Road Rage supplement for
-            more JUMP Bikes, and JUMP Bike racing rules).
-
+      info: >
+        Voted the hottest bike by Street Racer Weekly for the 4th
+        straight year, the Toyota Locust Quad Turbo JUMP bike is a
+        jump racer’s dream come true! Our patented ACR Titan JUMP
+        system (+1 to Driving when making turbo jumps) comes standard
+        on all Locusts and our titanium coil JUMP springs and
+        sleek tri-foil chassis ensure a sweet landing, so you can be
+        at the head of the pack. (See the Road Rage supplement for
+        more JUMP Bikes, and JUMP Bike racing rules).
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
