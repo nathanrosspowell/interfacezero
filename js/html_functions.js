@@ -628,7 +628,7 @@ function createCharacterDropdown( name, myJ ) {
     x += '    <li><a href="#' + protectionId(name)+ '">Protection</a></li>';
     x += '    <li><a href="#' + armamentsId(name)+ '">Weapons</a></li>';
     x += '    <li><a href="#' + gearId(name)+ '">Gear</a></li>';
-    x += '    <li><a href="#' + powersId(name)+ '">Gear</a></li>';
+    x += '    <li><a href="#' + powersId(name)+ '">Powers</a></li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Back story</li>';
     x += '    <li><a href="#' + contactsId(name)+ '">Contacts</a></li>';
