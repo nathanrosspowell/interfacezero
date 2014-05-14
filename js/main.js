@@ -1,7 +1,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // This is what executes
 $(window).bind("load", function() {
-    //try{
+    try{
         playerCharacters.forEach(function(yamlFile){
             $.ajax({
                 url: 'yaml/' + yamlFile + '.yaml',
@@ -13,13 +13,13 @@ $(window).bind("load", function() {
         });
         $('body').scrollspy({offset: 60});
         $('#interfacezero-warning').hide();
-/*    }
+    }
     catch(err){
         var x = "";
         x += '<h4>Javascript Error</h4>';
         x += '<p>Error description:</p>';
         x += '<p>' + err.message + '</p>';
         $('#interfacezero-warning').html(x);
-    }*/
+    }
 });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
