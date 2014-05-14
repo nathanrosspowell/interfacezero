@@ -109,14 +109,14 @@ hinderances:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~gear
 gear:
-    - name: RAVENLOCKE BEACHHEAD FIRST RESPONDER ARMOR
+    - name: Ravenlocke beachhead first responder armor
       info: >
         RI’s first responder armor is used by primary back-up units,
         first responders are linked to the “officer down” system, they
         know they need to be ready when it hits the fan. Includes an
         internal communications array, with “officer down” biosensor
         uplink and shoulder-mount camcorder with uplink." 
-    - name: EMERGENCY SUPPORT PATCH
+    - name: Emergency support patch
       info: +2 to Healing rolls
     
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -126,11 +126,11 @@ armaments:
       info: "semi-auto, AP"
       damage: 2d8
       weight: 3
-    - name: WASTELAND TRADERS EVISCERATOR CHAIN SWORD
+    - name: Wasteland traders eviscerator chain sword
       damage: str+d10
       weight: 10
       info: "requires battery, AP."
-    - name: BLACK KNIGHT INDUSTRIES SHOTFIST
+    - name: Black knight industries shotfist
       damage: str+d4 + 3d6
       weight: 9
     - name: AGA Thunder shotgun
@@ -150,10 +150,10 @@ augmentations:
     - name: Subdermal Armour
       info: +1 Toughness
       strain: 1
-    - name: CYBERLEGS; LIGAMENT ENHANCEMENT
+    - name: cyberlegs; ligament enhancement
       info: Ligament Enhancement adds 4” to the character’s Pace.
       strain: 0
-    - name: NIGHT VISION OPTICS
+    - name: Night vision optics
       info:  >
         Low light vision ignores penalties for Dim and Dark
         lighting, allowing the creature to see in all but pitch black
@@ -162,7 +162,7 @@ augmentations:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~protection
 protection:
-    torso: RAVENLOCKE BEACHHEAD FIRST RESPONDER ARMOR +4
+    torso:
     head: 
     arm: 
     life support: 
