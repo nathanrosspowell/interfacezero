@@ -390,7 +390,9 @@ function armaments( name, myJ ){
             y += makeInfoModal( name+"-weapon-"+index, "Armament: "+map["name"], map["info"] );
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
-            y += '  <td>' + map["quantity"] + '</td>';
+            if ( typeof map["quantity"] !== 'undefined'){
+               y +=   map["quantity"]
+            }
             y += '  <td>' + map["damage"] + '</td>';
             y += '  <td>' + map["weight"] + '</td>';
             y += '</tr>';
@@ -464,7 +466,9 @@ function gear( name, myJ ){
             y += makeInfoModal( name+"-gear-"+index, "Gear: "+map["name"], map["info"] );
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
-            y += '  <td>' + map["quantity"] + '</td>';
+            if ( typeof map["quantity"] !== 'undefined'){
+               y +=   map["quantity"]
+            }
             y += '  <td>'
             if ( typeof map["cost"] !== 'undefined'){
                y +=   map["cost"]
