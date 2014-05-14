@@ -33,6 +33,9 @@ function spendingId( name ){
 function notesId( name ){
     return name + "-notes";
 }
+function contactsId( name ){
+    return name + "-contacts";
+}
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeHeading( text ){
    return "<h3>" + text + "</h3>";
