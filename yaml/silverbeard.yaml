@@ -183,11 +183,10 @@ notes:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~powers
 powers:
     - name: Armor
-      Rank: Novice
-      Power Points: 2
-      Range: Touch
-      Duration: 3 (1/round)
-      Trappings: >
+      powerpoints: 2
+      range: Touch
+      duration: 3 (1/round)
+      info: >
         A mystical glow, hardened skin, ethereal armor,
         a mass of insects or worms.
         Armor creates a field of magical protection around a
@@ -196,15 +195,14 @@ powers:
         A raise grants 4 points of Armor.
         Whether the armor is visible or not depends largely on the
         trapping.
-      Effect: >
+      effect: >
         Subdermal armor becomes denser. Success grants the recipient 2 points of Armor.
         A raise grants 4 points of Armor.
     - name: Boost/Lower Trait
-      Rank: Novice
-      Power Points: 2
-      Range: Smarts
-      Duration: 3 (1/round)
-      Trappings: >
+      powerpoints: 2
+      range: Smarts
+      duration: 3 (1/round)
+      info: >
         Physical change, glowing aura, potions.
         This power allows a character to increase any of a target’s
         Traits by one die type for a standard success, or by two with a
@@ -218,7 +216,7 @@ powers:
         it two steps. A Trait cannot be lowered below a d4. Multiple
         castings stack, though the caster must keep track of when
         each casting expires as usual.
-      Effect: >
+      effect: >
         This power allows a character to increase any of a target’s
         Traits by one die type for a standard success, or by two with a
         raise. The affected Trait can exceed d12. Each step over d12
