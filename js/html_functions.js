@@ -36,6 +36,9 @@ function notesId( name ){
 function contactsId( name ){
     return name + "-contacts";
 }
+function powersId( name ){
+    return name + "-powers";
+}
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeHeading( text ){
    return "<h3>" + text + "</h3>";
@@ -223,11 +226,13 @@ function createCharacterPanel( name, myJ ){
     x += '      <hr/>';
     x +=        gear( name, myJ );
     x += '      <hr/>';
+    x +=        contacts( name, myJ );
+    x += '      <hr/>';
+    x +=        powers( name, myJ );
+    x += '      <hr/>';
     x +=        spending( name, myJ );
     x += '      <hr/>';
     x +=        notes( name, myJ );
-    x += '      <hr/>';
-    x +=        contacts( name, myJ );
     x += '  </div>';
     x += '</div>';
     return x;
@@ -393,6 +398,29 @@ function armaments( name, myJ ){
     });
     return x;
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function armaments( name, myJ ){
+    var x = "";
+    x += '<a class="anchor" id="' + armamentsId( name ) +'"></a>';
+    x += makeHeading('Armaments');
+    x += makeTable( ["","Name","Damage","Weight"],function(){
+        var y = "";
+        $.each(myJ["armaments"],function(index){
+            var map = myJ["armaments"][ index ];
+            y += '<tr>';
+            y += '  <td>'
+            y += makeInfoModal( name+"-weapon-"+index, "Armament: "+map["name"], map["info"] );
+            y += '  </td>'
+            y += '  <td>' + map["name"] + '</td>';
+            y += '  <td>' + map["damage"] + '</td>';
+            y += '  <td>' + map["weight"] + '</td>';
+            y += '</tr>';
+        });
+        return y;
+    });
+    return x;
+}
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function augmentations( name, myJ ){
     var x = "";
@@ -414,6 +442,32 @@ function augmentations( name, myJ ){
     });
     return x;
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function powers( name, myJ ){
+    var x = "";
+    x += '<a class="anchor" id="' + augmentationsId( name ) +'"></a>';
+    x += makeHeading("Powers");
+    x += makeTable( ["","Name","PowersPoints",],function(){
+        var y = "";
+        $.each(myJ["powers"],function(index){
+            var map = myJ["powers"][ index ];
+            y += '  <tr>';
+            y += '  <td>'
+            y += makeInfoModal( name+"-powers-"+index, "Powers: "+map["name"], map["info"] );
+            y += '  </td>'
+            y += '    <td>' + map["name"] + '</td>';
+            y += '    <td>' + map["powerpoints"] + '</td>';
+            y += '    <td>' + map["duration"] + '</td>';
+            y += '    <td>' + map["range"] + '</td>';
+            y += '    <td>' + map["info"] + '</td>';
+            y += '  </tr>';
+        });
+        return y;
+    });
+    return x;
+}
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function gear( name, myJ ){
     var x = "";
@@ -597,9 +651,10 @@ function createCharacterDropdown( name, myJ ) {
     x += '    <li><a href="#' + gearId(name)+ '">Gear</a></li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Back story</li>';
+    x += '    <li><a href="#' + powersId(name)+ '">Powers</a></li>';
+    x += '    <li><a href="#' + contactsId(name)+ '">Contacts</a></li>';
     x += '    <li><a href="#' + spendingId(name)+ '">Spending</a></li>';
     x += '    <li><a href="#' + notesId(name)+ '">Notes</a></li>';
-    x += '    <li><a href="#' + contactsId(name)+ '">Contacts</a></li>';
     x += '  </ul>';
     x += '</li>';
     return x;
