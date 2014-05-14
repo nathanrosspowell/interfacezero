@@ -393,6 +393,10 @@ function armaments( name, myJ ){
             if ( typeof map["quantity"] !== 'undefined'){
                y +=   map["quantity"]
             }
+            else
+            {
+                y += '  <td>'
+            }
             y += '  <td>' + map["damage"] + '</td>';
             y += '  <td>' + map["weight"] + '</td>';
             y += '</tr>';
