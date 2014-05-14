@@ -405,13 +405,13 @@ function powers( name, myJ ){
     x += '<a class="anchor" id="' + powersId( name ) +'"></a>';
     x += makeHeading('Powers');
     if (myJ["powers"] !== 'undefined' && myJ["powers"] != null){
-        x += makeTable( ["","Name","PowerPoints","Range", "Duration", "Effect", "Info"],function(){
+        x += makeTable( ["","Name","PowerPoints","Range", "Duration", "Effect"],function(){
             var y = "";
             $.each(myJ["powers"],function(index){
                 var map = myJ["powers"][ index ];
                 y += '<tr>';
                 y += '  <td>'
-                y += makeInfoModal( name+"-power-"+index, map["name"], map["info"]);
+                y += makeInfoModal( name+"-power-"+index, "Power: "+map["name"], map["info"]);
                 y += '  </td>'
                 y += '  <td>' + map["name"] + '</td>';
                 y += '  <td>' + map["powerpoints"] + '</td>';
