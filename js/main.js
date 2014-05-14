@@ -16,8 +16,7 @@ $(window).bind("load", function() {
                     }
                     errors += '<h4>Javascript Error</h4>';
                     errors += '<p>File: '+ yamlFile +'</p>';
-                    errors += '<p>Error description:</p>';
-                    errors += '<p>' + err.message + '</p>';
+                    errors += '<p>Error description:'+err.message+'</p>';
                 }
                 
             }
