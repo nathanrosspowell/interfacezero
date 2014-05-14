@@ -391,7 +391,7 @@ function armaments( name, myJ ){
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
             if ( typeof map["quantity"] !== 'undefined'){
-               y +=   map["quantity"] + '</td>';
+               y += '  <td>' + map["quantity"] + '</td>';
             }
             else
             {
@@ -471,7 +471,7 @@ function gear( name, myJ ){
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
             if ( typeof map["quantity"] !== 'undefined'){
-               y +=   map["quantity"] + '</td>';
+               y += '  <td>' + map["quantity"] + '</td>';
             }
             else
             {
