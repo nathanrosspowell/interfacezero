@@ -142,11 +142,11 @@ function makeBigModal( id, button, content ){
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeCharacterDescription(character,race,occupation,xp ){
     var levels = [
-          [20,"Novice"]
-        , [40,"Intermediate"]
-        , [60,"Intermediate"]
-        , [80,"Intermediate"]
-        , [100,"Intermediate"]
+          [0,"Novice"]
+        , [20,"Seasoned"]
+        , [40,"Veteran"]
+        , [60,"Heroic"]
+        , [80,"Legendary"]
     ];
     var level = levels[0][1];
     for (var i = 0; i < levels.length; i++) {
