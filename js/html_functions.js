@@ -271,7 +271,7 @@ function tap( name, myJ ){
           ["Firewall", map["firewall"]]
         , ["Toughness", map["toughness"]]
         , ["AMS", map["toughness"]]
-        , ["Armour", map["toughness"]]
+        , ["Armor", map["toughness"]]
     ]);
     return x;
 }
@@ -395,7 +395,7 @@ function armaments( name, myJ ){
             }
             else
             {
-                += '  <td>' + '1' + '</td>';
+                y += '  <td>' + '1' + '</td>';
             }
             y += '  <td>' + map["damage"] + '</td>';
             y += '  <td>' + map["weight"] + '</td>';
