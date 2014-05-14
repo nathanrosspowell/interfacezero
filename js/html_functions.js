@@ -448,8 +448,8 @@ function powers( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + augmentationsId( name ) +'"></a>';
     x += makeHeading("Powers");
-    x += makeTable( ["","Name","PowersPoints",],function(){
-        var y = "";
+    x += makeTable( ["","Name","Powers Points",],function(){
+        var y = ""; 
         $.each(myJ["powers"],function(index){
             var map = myJ["powers"][ index ];
             y += '  <tr>';
@@ -460,6 +460,7 @@ function powers( name, myJ ){
             y += '    <td>' + map["powerpoints"] + '</td>';
             y += '    <td>' + map["duration"] + '</td>';
             y += '    <td>' + map["range"] + '</td>';
+            y += '    <td>' + map["effect"] + '</td>';
             y += '    <td>' + map["info"] + '</td>';
             y += '  </tr>';
         });
