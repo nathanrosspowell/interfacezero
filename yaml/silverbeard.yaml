@@ -9,7 +9,7 @@ id:
     backstory: >
         The first thing Samson remembers is sitting bolt upright, IVs and clamps ripping from his skin. Doctors and nurses chattering
         at him in chinese trying to force him down back onto the bed, one approached him with a syringe, his instincts kicked in and his adrenal 
-        glands swelled and he propelled himself with inhuman stength from the tabls, tearing off the constrains as if they were paper.
+        glands swelled and he propelled himself with i stength from the tabls, tearing off the constrains as if they were paper.
         
         Taking off down an alley, which despite being well into the night, he could see clearly, his legs pumping with almost pnumatic frequency, he began to succumb to the blood loss from the open wounds and unfinished work
         on his body, and collapsed into a pile of garbage.
@@ -245,14 +245,13 @@ Vehicles:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Contacts
 Contacts:
-    - name: Boomer
-      info: >
-        Left chicago.
-        Involved with Kato and Chimera
-    - name: Dr Cheng
-      info: >
-        Street Doc. Can repair, install or remove augments. Still in debt to him
-        for the initial fix up.
+    Boomer:
+        - Smugger
+        - Left chicago.
+        - Involved with Kato and Chimera
+        - NOT ACTIVE
+    Dr Cheng:
+        - Street Doc. Can repair, install or remove augments.
+        - Still in debt to him for the initial fix up.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
