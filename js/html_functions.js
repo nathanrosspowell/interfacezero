@@ -404,23 +404,25 @@ function powers( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + powersId( name ) +'"></a>';
     x += makeHeading('Powers');
-    x += makeTable( ["","Name","PowerPoints","Range", "Duration", "Effect", "Info"],function(){
-        var y = "";
-        $.each(myJ["powers"],function(index){
-            var map = myJ["powers"][ index ];
-            y += '<tr>';
-            y += '  <td>'
-            y += makeInfoModal( name+"-power-"+index, "Power: "+map["name"], map["powerpoints"] );
-            y += '  </td>'
-            y += '  <td>' + map["name"] + '</td>';
-            y += '  <td>' + map["powerpoints"] + '</td>';
-            y += '  <td>' + map["range"] + '</td>';
-            y += '  <td>' + map["duration"] + '</td>';
-            y += '  <td>' + map["effect"] + '</td>';
-            y += '</tr>';
+    if (myJ["powers"] !== 'undefined' && myJ["powers"] != null){
+        x += makeTable( ["","Name","PowerPoints","Range", "Duration", "Effect", "Info"],function(){
+            var y = "";
+            $.each(myJ["powers"],function(index){
+                var map = myJ["powers"][ index ];
+                y += '<tr>';
+                y += '  <td>'
+                y += makeInfoModal( name+"-power-"+index, "Power: "+map["name"], map["powerpoints"] );
+                y += '  </td>'
+                y += '  <td>' + map["name"] + '</td>';
+                y += '  <td>' + map["powerpoints"] + '</td>';
+                y += '  <td>' + map["range"] + '</td>';
+                y += '  <td>' + map["duration"] + '</td>';
+                y += '  <td>' + map["effect"] + '</td>';
+                y += '</tr>';
+            });
+            return y;
         });
-        return y;
-    });
+    }
     return x;
 }
 
