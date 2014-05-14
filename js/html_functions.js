@@ -411,12 +411,13 @@ function powers( name, myJ ){
                 var map = myJ["powers"][ index ];
                 y += '<tr>';
                 y += '  <td>'
-                y += makeInfoModal( name+"-power-"+index, +map["name"], map["effect"],  map["info"]);
+                y += makeInfoModal( name+"-power-"+index, map["name"], map["info"]);
                 y += '  </td>'
                 y += '  <td>' + map["name"] + '</td>';
                 y += '  <td>' + map["powerpoints"] + '</td>';
                 y += '  <td>' + map["range"] + '</td>';
                 y += '  <td>' + map["duration"] + '</td>';
+                y += '  <td>' + map["effect"] + '</td>';
                 y += '</tr>';
             });
             return y;
