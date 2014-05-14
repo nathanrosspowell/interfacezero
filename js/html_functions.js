@@ -395,7 +395,7 @@ function armaments( name, myJ ){
             }
             else
             {
-                y += '  <td>'
+                += '  <td>' + "1" + '</td>';
             }
             y += '  <td>' + map["damage"] + '</td>';
             y += '  <td>' + map["weight"] + '</td>';
