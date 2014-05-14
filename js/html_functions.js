@@ -228,8 +228,6 @@ function createCharacterPanel( name, myJ ){
     x += '      <hr/>';
     x +=        contacts( name, myJ );
     x += '      <hr/>';
-//    x +=        powers( name, myJ );
-//    x += '      <hr/>';
     x +=        spending( name, myJ );
     x += '      <hr/>';
     x +=        notes( name, myJ );
@@ -652,7 +650,6 @@ function createCharacterDropdown( name, myJ ) {
     x += '    <li><a href="#' + gearId(name)+ '">Gear</a></li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Back story</li>';
-    ééx += '    <li><a href="#' + powersId(name)+ '">Powers</a></li>';
     x += '    <li><a href="#' + contactsId(name)+ '">Contacts</a></li>';
     x += '    <li><a href="#' + spendingId(name)+ '">Spending</a></li>';
     x += '    <li><a href="#' + notesId(name)+ '">Notes</a></li>';
