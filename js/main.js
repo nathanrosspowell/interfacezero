@@ -18,7 +18,7 @@ $(window).bind("load", function() {
                     errors += '<p>File: yaml/'+ yamlFile +'.yaml</p>';
                     errors += '<p>Error description:'+err.message+'</p>';
                     errors += '<p>Call stack:</p>';
-                    errors += "<p>"+err.stack.split("at").join("</p><p>")+"</p>";
+                    errors += "<p>"+err.stack.split(" at ").join("</p><p>")+"</p>";
                 }
                 
             }
