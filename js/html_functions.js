@@ -381,7 +381,7 @@ function armaments( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + armamentsId( name ) +'"></a>';
     x += makeHeading('Armaments');
-    x += makeTable( ["","Name","Damage","Weight"],function(){
+    x += makeTable( ["","Name","Quantity","Damage","Weight"],function(){
         var y = "";
         $.each(myJ["armaments"],function(index){
             var map = myJ["armaments"][ index ];
@@ -390,6 +390,7 @@ function armaments( name, myJ ){
             y += makeInfoModal( name+"-weapon-"+index, "Armament: "+map["name"], map["info"] );
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
+            y += '  <td>' + map["quantity"] + '</td>';
             y += '  <td>' + map["damage"] + '</td>';
             y += '  <td>' + map["weight"] + '</td>';
             y += '</tr>';
@@ -454,7 +455,7 @@ function gear( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + gearId( name ) +'"></a>';
     x += makeHeading("Gear");
-    x += makeTable( ["","Name","Cost"],function(){
+    x += makeTable( ["","Name","Quantity","Cost"],function(){
         var y = "";
         $.each(myJ["gear"],function(index){
             var map = myJ["gear"][ index ];
@@ -463,6 +464,7 @@ function gear( name, myJ ){
             y += makeInfoModal( name+"-gear-"+index, "Gear: "+map["name"], map["info"] );
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
+            y += '  <td>' + map["quantity"] + '</td>';
             y += '  <td>'
             if ( typeof map["cost"] !== 'undefined'){
                y +=   map["cost"]
