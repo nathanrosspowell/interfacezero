@@ -138,9 +138,10 @@ armaments:
       info: +2 stealth to carry.
       damage: 1-3d6
       weight: 9
-    - name: "HE-40, High Explosive * 2"
+    - name: "HE-40, High Explosive"
       damage: 4d8
       weight: 2
+      quantity: 2
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~augmentations
 augmentations:
