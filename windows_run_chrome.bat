@@ -1,1 +1,1 @@
-start chrome --user-data-dir="%CD%" --disable-web-security "%CD%\index.html"
+start chrome --disable-web-security "%CD%\index.html"
