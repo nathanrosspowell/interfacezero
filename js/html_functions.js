@@ -551,7 +551,7 @@ function notes( name, myJ ){
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function contacts( name, myJ ){
     var x = "";
-    var notes = name + "-contacts";
+    var contacts = name + "-contacts";
     var anchor = name + "-contacts-id";
     x += '<a class="anchor" id="' + contactsId( name ) +'"></a>';
     x += makeHeading('Contacts');
