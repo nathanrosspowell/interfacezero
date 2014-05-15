@@ -36,3 +36,7 @@ $(window).bind("load", function() {
     }, 500);
 });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$('.navbar-collapse ul li a').click(function(){ 
+
+  $('.navbar-toggle:visible').click();
+});
