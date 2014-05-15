@@ -39,6 +39,9 @@ function contactsId( name ){
 function powersId( name ){
     return name + "-powers";
 }
+function vehiclesId( name ){
+    return name + "-vehicles";
+}
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeHeading( text ){
    return "<h3>" + text + "</h3>";
@@ -229,6 +232,8 @@ function createCharacterPanel( name, myJ ){
     x +=        armaments( name, myJ );
     x += '      <hr/>';
     x +=        gear( name, myJ );
+    x += '      <hr/>';
+    x +=        vehicles( name, myJ );
     x += '      <hr/>';
     x +=        contacts( name, myJ );
     x += '      <hr/>';
@@ -487,6 +492,37 @@ function gear( name, myJ ){
     });
     return x;
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function vehicles( name, myJ ){
+    var x = "";
+    x += '<a class="anchor" id="' + vehiclesId( name ) +'"></a>';
+    x += makeHeading("Vehicles");
+    x += makeTable( ["","Name","Quantity","Cost"],function(){
+        var y = "";
+        $.each(myJ["vehicles"],function(index){
+            var map = myJ["vehicles"][ index ];
+            y += '<tr>';
+            y += '  <td>'
+            y += makeInfoModal( name+"-vehicles-"+index, "Vehicles: "+map["name"], map["info"] );
+            y += '  </td>'
+            y += '  <td>' + map["name"] + '</td>';
+            y += '  <td>';
+            if ( typeof map["quantity"] !== 'undefined'){
+               y +=    map["quantity"];
+            }
+            y += '  </td>'
+            y += '  <td>';
+            if ( typeof map["cost"] !== 'undefined'){
+               y +=   map["cost"]
+            }
+            y += '  </td>'
+            y += '</tr>';
+        });
+        return y;
+    });
+    return x;
+}
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function protection( name, myJ ){
     var map = myJ["protection"];
@@ -643,6 +679,7 @@ function createCharacterDropdown( name, myJ ) {
     x += '    <li><a href="#' + protectionId(name)+ '">Protection</a></li>';
     x += '    <li><a href="#' + armamentsId(name)+ '">Weapons</a></li>';
     x += '    <li><a href="#' + gearId(name)+ '">Gear</a></li>';
+    x += '    <li><a href="#' + vehiclesId(name)+ '">Gear</a></li>';
     x += '    <li><a href="#' + powersId(name)+ '">Powers</a></li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Back story</li>';
