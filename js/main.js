@@ -39,7 +39,9 @@ $(window).bind("load", function() {
 $(function(){ 
     var navMain = $("#interfacezero-navbar");
     navMain.on("click", "a", null, function () {
-        navMain.collapse('hide');
+        if ( href!=="#"){
+            navMain.collapse('hide');
+        }
     });
 });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
