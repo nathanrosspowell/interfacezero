@@ -95,10 +95,6 @@ hinderances:
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~gear
 gear:
-    - name: Harley Motorcycle
-      info: 1d4 driving AI
-      cost: 1000c
-      quantity: 1
     - name: Medium cal ammo
       cost: ---
       info: A normal amount
@@ -154,6 +150,16 @@ protection:
     life support: 
     leg: 
     hazard sheild:
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~vehicles
+vehicles:
+    - name: Harley Motorcycle
+      cost: 1000c
+      info: >
+        <ul>
+        <li><code>1d4</code> driving AI</li>
+        <li>Fake 'Harley' sound generator</li>
+        </ul>
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~contacts
 contacts:
