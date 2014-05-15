@@ -34,5 +34,5 @@ $(window).bind("load", function() {
     $('html, body').animate({
         scrollTop: $( $.attr(this, href) ).offset().top
     }, 500);
-}
+});
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
