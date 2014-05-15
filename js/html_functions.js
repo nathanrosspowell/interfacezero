@@ -476,16 +476,13 @@ function gear( name, myJ ){
             y += makeInfoModal( name+"-gear-"+index, "Gear: "+map["name"], map["info"] );
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
-            y += '  <td>';
             if ( typeof map["quantity"] !== 'undefined'){
-               y +=    map["quantity"];
+               y +=    map["quantity"] + '</td>';
             }
             else
             {
                 y += '  <td>' + '1' + '</td>';
             }
-            y += '  </td>'
-            y += '  <td>';
             if ( typeof map["cost"] !== 'undefined'){
                y +=   map["cost"]
             }
@@ -511,16 +508,13 @@ function vehicles( name, myJ ){
             y += makeInfoModal( name+"-vehicles-"+index, "Vehicles: "+map["name"], map["info"] );
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
-            y += '  <td>';
             if ( typeof map["quantity"] !== 'undefined'){
-               y +=    map["quantity"];
+               y +=    map["quantity"] + '</td>';
             }
             else
             {
                 y += '  <td>' + '1' + '</td>';
             }
-            y += '  </td>'
-            y += '  <td>';
             if ( typeof map["cost"] !== 'undefined'){
                y +=   map["cost"]
             }
