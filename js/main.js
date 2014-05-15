@@ -36,15 +36,3 @@ $(window).bind("load", function() {
     }, 500);
 });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$(function(){ 
-    var navMain = $("#interfacezero-navbar");
-    navMain.on("click", "a", null, function () {
-        if ( href!=="#"){
-            navMain.collapse('hide');
-            $('html, body').animate({
-                scrollTop: $( $(this).attr('href') ).offset().top
-            }, 500);
-        }
-    });
-});
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
