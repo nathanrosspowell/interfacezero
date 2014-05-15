@@ -400,8 +400,7 @@ function armaments( name, myJ ){
             if ( typeof map["quantity"] !== 'undefined'){
                y += '  <td>' + map["quantity"] + '</td>';
             }
-            else
-            {
+            else{
                 y += '  <td>' + '1' + '</td>';
             }
             y += '  <td>' + map["damage"] + '</td>';
@@ -509,8 +508,7 @@ function vehicles( name, myJ ){
             if ( typeof map["quantity"] !== 'undefined'){
                y += '  <td>' + map["quantity"] + '</td>';
             }
-            else
-            {
+            else{
                 y += '  <td>' + '1' + '</td>';
             }
             if ( typeof map["cost"] !== 'undefined'){
