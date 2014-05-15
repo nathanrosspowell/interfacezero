@@ -472,15 +472,14 @@ function gear( name, myJ ){
             y += makeInfoModal( name+"-gear-"+index, "Gear: "+map["name"], map["info"] );
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
-            if ( typeof map["quantity"] !== 'undefined'){
-               y += '  <td>' + map["quantity"] + '</td>';
-            }
-            else
-            {
-                y += '  <td>'
-            }
+            y += '  <td>';
             if ( typeof map["cost"] !== 'undefined'){
                y +=   map["cost"]
+            }
+            y += '  </td>'
+            y += '  <td>';
+            if ( typeof map["quantity"] !== 'undefined'){
+               y +=    map["quantity"];
             }
             y += '  </td>'
             y += '</tr>';
