@@ -472,13 +472,13 @@ function gear( name, myJ ){
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
             y += '  <td>';
-            if ( typeof map["cost"] !== 'undefined'){
-               y +=   map["cost"]
-            }
-            y += '  </td>'
             y += '  <td>';
             if ( typeof map["quantity"] !== 'undefined'){
                y +=    map["quantity"];
+            }
+            y += '  </td>'
+            if ( typeof map["cost"] !== 'undefined'){
+               y +=   map["cost"]
             }
             y += '  </td>'
             y += '</tr>';

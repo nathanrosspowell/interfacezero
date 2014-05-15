@@ -98,21 +98,27 @@ gear:
     - name: Harley Motorcycle
       info: 1d4 driving AI
       cost: 1000c
+      quantity: 1
     - name: Medium cal ammo
       cost: ---
       info: A normal amount
+      quantity: 100
     - name: Mesh id jammer
       cost: ---
       info: "Anarchy symbol, needs battery"
+      quantity: 1
     - name: "Tap: Bounty board" 
       info: List of known fugitives
       cost: 400/cpm
+      quantity: n/a
     - name: "Tap: e-stream" 
       info: Entertainment
       cost: 50/cpm
+      quantity: n/a
     - name: "Tap: Swapper protect"
       info: +1 firewall
       cost: 950/cpm
+      quantity: n/a
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~armaments
 armaments:
