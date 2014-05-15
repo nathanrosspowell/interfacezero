@@ -480,6 +480,7 @@ function gear( name, myJ ){
             if ( typeof map["quantity"] !== 'undefined'){
                y +=    map["quantity"];
             }
+            else
             {
                 y += '  <td>' + '1' + '</td>';
             }
@@ -514,6 +515,7 @@ function vehicles( name, myJ ){
             if ( typeof map["quantity"] !== 'undefined'){
                y +=    map["quantity"];
             }
+            else
             {
                 y += '  <td>' + '1' + '</td>';
             }
