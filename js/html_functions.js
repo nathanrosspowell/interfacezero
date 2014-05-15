@@ -475,15 +475,16 @@ function gear( name, myJ ){
             y += makeInfoModal( name+"-gear-"+index, "Gear: "+map["name"], map["info"] );
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
+            y += '  <td>'
             if ( typeof map["quantity"] !== 'undefined'){
-                y += '  <td>' + map["quantity"] + '</td>';
+                y +=    map["quantity"];
             }
-            else{
-                y += '  <td>' + '1' + '</td>';
-            }
+            y += '  </td>'
+            y += '  <td>'
             if ( typeof map["cost"] !== 'undefined'){
-               y += '  <td>' + map["cost"] + '</td>';
+               y +=    map["cost"];
             }
+            y += '  </td>'
             y += '</tr>';
         });
         return y;
@@ -496,28 +497,30 @@ function vehicles( name, myJ ){
     var x = "";
     x += '<a class="anchor" id="' + vehiclesId( name ) +'"></a>';
     x += makeHeading("Vehicles");
-    x += makeTable( ["","Name","Quantity","Cost"],function(){
-        var y = "";
-        $.each(myJ["vehicles"],function(index){
-            var map = myJ["vehicles"][ index ];
-            y += '<tr>';
-            y += '  <td>'
-            y += makeInfoModal( name+"-vehicles-"+index, "Vehicles: "+map["name"], map["info"] );
-            y += '  </td>'
-            y += '  <td>' + map["name"] + '</td>';
-            if ( typeof map["quantity"] !== 'undefined'){
-               y += '  <td>' + map["quantity"] + '</td>';
-            }
-            else{
-                y += '  <td>' + '1' + '</td>';
-            }
-            if ( typeof map["cost"] !== 'undefined'){
-               y += '  <td>' + map["cost"] + '</td>';
-            }
-            y += '</tr>';
+    if ( typeof myJ["vehicles"] !== 'undefined' ){
+        x += makeTable( ["","Name","Quantity","Cost"],function(){
+            var y = "";
+            $.each(myJ["vehicles"],function(index){
+                var map = myJ["vehicles"][ index ];
+                y += '<tr>';
+                y += '  <td>'
+                y += makeInfoModal( name+"-vehicles-"+index, "Vehicles: "+map["name"], map["info"] );
+                y += '  </td>'
+                y += '  <td>' + map["name"] + '</td>';
+                if ( typeof map["quantity"] !== 'undefined' ){
+                   y += '  <td>' + map["quantity"] + '</td>';
+                }
+                else{
+                    y += '  <td>' + '1' + '</td>';
+                }
+                if ( typeof map["cost"] !== 'undefined'){
+                   y += '  <td>' + map["cost"] + '</td>';
+                }
+                y += '</tr>';
+            });
+            return y;
         });
-        return y;
-    });
+    }
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
