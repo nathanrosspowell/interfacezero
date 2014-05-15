@@ -477,10 +477,9 @@ function gear( name, myJ ){
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
             if ( typeof map["quantity"] !== 'undefined'){
-               y +=    map["quantity"] + '</td>';
+                y += '  <td>' + map["quantity"] + '</td>';
             }
-            else
-            {
+            else{
                 y += '  <td>' + '1' + '</td>';
             }
             if ( typeof map["cost"] !== 'undefined'){
@@ -509,7 +508,7 @@ function vehicles( name, myJ ){
             y += '  </td>'
             y += '  <td>' + map["name"] + '</td>';
             if ( typeof map["quantity"] !== 'undefined'){
-               y +=    map["quantity"] + '</td>';
+               y += '  <td>' + map["quantity"] + '</td>';
             }
             else
             {
