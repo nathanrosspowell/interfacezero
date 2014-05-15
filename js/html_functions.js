@@ -102,10 +102,10 @@ function makeVerticalTable( pairs ){
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function makeModal( id, button, size, title, content ){
+function makeModal( id, button, buttonStyle, size, title, content ){
     var x = "";
     if (typeof content !== 'undefined' && content !== null){
-        x += '<button class="btn btn-primary btn-'+size+'" data-toggle="modal" data-target="#' + id +'">';
+        x += '<button class="btn '+buttonStyle+' btn-'+size+'" data-toggle="modal" data-target="#' + id +'">';
         x +=     button;
         x += '</button>';
         x += '<div id="' + id + '" class="modal fade bs-example-modal-'+size+'" tabindex="-1"';
@@ -131,13 +131,15 @@ function makeModal( id, button, size, title, content ){
 function makeInfoModal( id, title, content ){
     var button = '<span class="glyphicon glyphicon-list-alt"></span>';
     var size = 'xs';
-    return makeModal( id, button, size, title, content );
+    var buttonStyle = 'btn-primary';
+    return makeModal( id, button, buttonStyle, size, title, content );
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeBigModal( id, button, content ){
     var title = button;
     var size = 'lg';
-    return makeModal( id, button, size, title, content );
+    var buttonStyle = 'btn-default';
+    return makeModal( id, button, buttonStyle, size, title, content );
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeCharacterDescription(character,race,occupation,xp ){
@@ -191,7 +193,7 @@ function makeXpBar( xp ){
     var percentage = ( ( xp - min ) / range  ) * 100;
     var x = "";
     x += '<div class="progress progress-striped active">';
-    x += '  <div class="progress-bar" role="progressbar" aria-valuenow="'+percentage+'"'; 
+    x += '  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="'+percentage+'"'; 
     x += '  aria-valuemin="'+levels[0][0]+'" aria-valuemax="'+levels[0][1]+'" style="width: '+percentage+'%;">';
     x +=       xp + "xp";
     x += '  </div>';
