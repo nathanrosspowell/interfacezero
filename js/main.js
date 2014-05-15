@@ -30,5 +30,8 @@ $(window).bind("load", function() {
     } else {
         $('#interfacezero-warning').html(errors);
     }
+    $('html, body').animate({
+        scrollTop:$($.attr(this,window.location.hash.substring(1)')).offset().top
+    }, 500);
 });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
