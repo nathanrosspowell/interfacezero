@@ -29,7 +29,7 @@ $(window).bind("load", function() {
         });
     });
     // Offset the scrolling to accomadate the fixed menu bar.
-    $('body').scrollspy({offset: 70});
+    $('body').scrollspy({offset: 100});
     // If we no errors, hide the warning box - this say "Javascript Dependency"
     if (errors == ""){
         $('#interfacezero-warning').hide();
