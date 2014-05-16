@@ -662,8 +662,11 @@ function contacts( name, myJ ){
 }
 function dropdownLink( id, text ){
     var x = "";
-    x += '<a data-toggle="collapse" data-target=".navbar-collapse"';
+    /* += '<a data-toggle="collapse" data-target=".navbar-collapse"';
     x +=  'href="#' + id + '">';
+    x +=    text;
+    x += '</a>';*/
+    x += '<a href="#' + id + '">';
     x +=    text;
     x += '</a>';
     return x;
