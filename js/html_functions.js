@@ -707,6 +707,6 @@ function addHtmlForYaml( name, myJ ) {
     $("#interfacezero-main").append(html)
     // Add the html for the navigation.
     var dropdown = createCharacterDropdown( name, myJ );
-    $("#interfacezero-navbar").append(dropdown);
+    $("#scrollspy-navbar").append(dropdown);
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
