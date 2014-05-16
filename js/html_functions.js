@@ -660,7 +660,13 @@ function contacts( name, myJ ){
     }
     return x;
 }
-
+function dropdownLink( id, text ){
+    var x = "";
+    x += '<a data-toggle="collapse" data-target=".navbar-collapse"';
+    x +=  'href="#' + id + '">';
+    x +=    text;
+    x += '</a>';
+}
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function createCharacterDropdown( name, myJ ) {
     var x = "";
@@ -673,7 +679,7 @@ function createCharacterDropdown( name, myJ ) {
     x += '    <li><a href="#' + tapId(name)+ '">Tap</a></li>';
     x += '    <li><a href="#' + edgesId(name)+ '">Edges and Hinderances</a></li>';
     x += '    <li><a href="#' + skillsId(name)+ '">Skills</a></li>';
-    x += '    <li><a href="#' + augmentationsId(name)+ '">Augmentations</a></li>';
+    x += '    <li>' + dropdownLinkhref( augmentationsId(name), 'Augmentations') +_'</li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Items</li>';
     x += '    <li><a href="#' + protectionId(name)+ '">Protection</a></li>';
