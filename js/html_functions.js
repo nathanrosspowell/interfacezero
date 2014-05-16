@@ -254,8 +254,8 @@ function identification( name, myJ ){
     x+= '&nbsp';
     x += makeModal(name+"-backstory"
         , shortName(myJ)+"'s Backstory"
+        , "btn-default"
         , "xs"
-        , "btn-primary"
         , myJ["id"]["name"]+"'s Backstory"
         , myJ["id"]["backstory"]);
     x+= '</p>'
