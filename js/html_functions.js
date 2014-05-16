@@ -666,6 +666,7 @@ function dropdownLink( id, text ){
     x +=  'href="#' + id + '">';
     x +=    text;
     x += '</a>';
+    return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function createCharacterDropdown( name, myJ ) {
