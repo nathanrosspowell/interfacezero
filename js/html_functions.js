@@ -680,7 +680,7 @@ function createCharacterDropdown( name, myJ ) {
     x += '    <li><a href="#' + tapId(name)+ '">Tap</a></li>';
     x += '    <li><a href="#' + edgesId(name)+ '">Edges and Hinderances</a></li>';
     x += '    <li><a href="#' + skillsId(name)+ '">Skills</a></li>';
-    x += '    <li>' + dropdownLinkhref( augmentationsId(name), 'Augmentations') + '</li>';
+    x += '    <li>' + dropdownLink( augmentationsId(name), 'Augmentations') + '</li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Items</li>';
     x += '    <li><a href="#' + protectionId(name)+ '">Protection</a></li>';
