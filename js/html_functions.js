@@ -253,10 +253,11 @@ function identification( name, myJ ){
     x += makeCharacterDescription(myJ["id"]["name"],myJ["id"]["race"],myJ["id"]["occupation"],myJ["stats"]["xp"]); 
     x+= '&nbsp';
     x += makeModal(name+"-backstory"
-        ,shortName(myJ)+"'s Backstory"
+        , shortName(myJ)+"'s Backstory"
         , "xs"
+        , "btn-primary"
         , myJ["id"]["name"]+"'s Backstory"
-        ,myJ["id"]["backstory"]);
+        , myJ["id"]["backstory"]);
     x+= '</p>'
     x += makeXpBar(myJ["stats"]["xp"]);
     x += makeVerticalTable( [
