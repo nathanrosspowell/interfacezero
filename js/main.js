@@ -44,5 +44,16 @@ $(window).bind("load", function() {
     $('html, body').animate({
         scrollTop: $( $.attr(this, href) ).offset().top
     }, 500);
+    // Register hack to stop the non-mobile view closing the drop downs.
+    // http://stackoverflow.com/a/20644950/66003
+    // http://jsfiddle.net/yq7c4/8/
+    $('.navbar-collapse a').click(function (e) {
+    if($('.navbar-toggle').css('display') == 'block' && !$(this).siblings().length){
+        $('.navbar-collapse').collapse('toggle');
+    }
+});
 });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
