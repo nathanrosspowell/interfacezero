@@ -50,13 +50,32 @@ function replaceSpaces( text ){
     return text.replace(/\s+/g, '');
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function isValid( object ) {
+    return object !== 'undefined' && object !== null;
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function title( text ){
    return text.toLowerCase().replace(/\b[a-z]/g,function(letter){
         return letter.toUpperCase();
    });
 }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function getCharacterName( myJ ){
+    var x = "";
+    x += myJ["id"]["firstname"]
+    if ( isValid( myJ["id"]["nickname"]))
+    {
+        x += ' <i>' + myJ["id"]["nickname"] + '</i>';
+    }
+    x += ' ' + myJ["id"]["lastname"];
+    return x;
+}
 function shortName( myJ ){
-    return myJ["id"]["name"].split(" ")[ 0 ];
+    if ( isValid( myJ["id"]["nickname"]))
+    {
+        return myJ["id"]["nickname"];
+    }
+    return myJ["id"]["firstname"];
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function makeTable( headings, itemsFunction, useStripes ){
@@ -205,17 +224,18 @@ function makeXpBar( xp ){
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function createCharacterPanel( name, myJ ){
+    var characterName = getCharacterName( myJ );
     var x = "";
     x += '<a class="anchor" id="' + characterId(name) +'"></a>';
     x += '<div class="panel panel-default">';
     x += '  <div class="panel-heading">';
     x += '    <h3 class="panel-title">';
     x += '      <span class="glyphicon glyphicon-user"></span>&nbsp';
-    x +=        myJ["id"]["name"];
+    x +=        characterName;
     x += '    </h3>';
     x += '  </div>'; // Close panel-heading
     x += '  <div class="panel-body">';
-    x +=        identification( name, myJ );
+    x +=        identification( name, myJ, characterName );
     x += '      <hr/>';
     x +=        tap( name, myJ );
     x += '      <hr/>';
@@ -245,15 +265,15 @@ function createCharacterPanel( name, myJ ){
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function identification( name, myJ ){
+function identification( name, myJ, characterName ){
     var map = myJ["stats"];
     var x = "";
     x += '<a class="anchor" id="' + identificationId( name ) +'"></a>';
     x+= '<p>';
-    x += makeCharacterDescription(myJ["id"]["name"],myJ["id"]["race"],myJ["id"]["occupation"],myJ["stats"]["xp"]); 
+    x += makeCharacterDescription(characterName,myJ["id"]["race"],myJ["id"]["occupation"],myJ["stats"]["xp"]); 
     x+= '&nbsp';
     x += makeModal(name+"-backstory"
-        , shortName(myJ)+"'s Backstory"
+        , getCharacterShortName(myJ)+"'s Backstory"
         , "btn-default"
         , "xs"
         , myJ["id"]["name"]+"'s Backstory"
@@ -674,11 +694,12 @@ function dropdownLink( id, text ){
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function createCharacterDropdown( name, myJ ) {
+    var characterName = getCharacterName( myJ );
     var x = "";
     x += '<li class="dropdown">';
-    x += '  <a href="#" class="dropdown-toggle" data-toggle="dropdown">' + shortName(myJ) + '<b class="caret"></b></a>';
+    x += '  <a href="#" class="dropdown-toggle" data-toggle="dropdown">' + getCharacterShortName(myJ) + '<b class="caret"></b></a>';
     x += '  <ul class="dropdown-menu">';
-    x += '    <li>' + dropdownLink( characterId(name), myJ["id"]["name"]) + '</li>';
+    x += '    <li>' + dropdownLink( characterId(name), characterName) + '</li>';
     x += '    <li class="divider"></li>';
     x += '    <li class="dropdown-header">Stats</li>';
     x += '    <li>' + dropdownLink( tapId(name), 'Tap') + '</li>';
