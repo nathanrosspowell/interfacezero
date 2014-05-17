@@ -16,7 +16,12 @@ def get_options():
 def beautify_folder(opts,js_dir):
     def path(js_file):
         return os.path.join(js_dir,js_file)
-    js_files = [path(j) for j in os.listdir(js_dir) if j.endswith(r".js")]
+    def valid(js_file):
+        right_file = js_file.endswith(".js")
+        minimized =  ".min" in js_file
+        boostrap = "boostrap." in js_file
+        return right_file and not minimized and not boostrap
+    js_files = [path(j) for j in os.listdir(js_dir) if valid(j)]
     beautify_file_partial = partial(beautify_file,opts)
     map(beautify_file_partial,js_files)        
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
