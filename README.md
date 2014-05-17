@@ -28,51 +28,48 @@ How to edit YAML
 [YAML][yaml] is a human friendly data serialization standard for all programming languages.
 YAML files use significant whitespace (much like the Python programming language) to group data together. The main notations to recognise are:
 * A map:
-  ```YAML
-  
-  key: 1
-  anotherKey: 2.0
-  Another Key: Three
-  ```
+
+        key: 1
+        anotherKey: 2.0
+        Another Key: Three
+
 * A list:
-  ```YAML
 
-  - 1
-  - 2.0
-  - Three
-  ```
+        - 1
+        - 2.0
+        - Three
+
 * Strings (text) which have some extra rules because of the parsing library that is used:
- ```YAML
-  key0: This is a string no need for quotes
-  key1: "A string in quotes"
-  key2: 'another string in quotes'
-  key3: >
-      This is a multiline string.
-      So you can do as much as you like, as long as it is indented correctly
-  key4: "a string that needs 'escaping' because of the quote around that word"
-  key5: 'a string that needs "escaping" because of the quote around that word'
-  key5: "a string that needs escaping because of the last character :"
-  key6: "a string that needs escaping because of the last characer ,"
-  key7: "a string that needs escaping because of the last character ,"
-  key8: >
-      The multiline string can have 'all' the "crazy" characters it wants ::: ,,, !!!
-    
-  ```
-* Basic nesting:
-  ```YAML
 
-  id: # A map of main attributes (This is a comment)
-      name: Rodimus Prime
-      race: Autobot
-  enemies: # A list of enemies. 
-      - Megatron
-      - Unicron
-  friends: # A lists of maps of friend attribues!
-      - name: Ironhide
-        race: Autobot
-      - name: Daniel
-        race: Human
-  ```
+        key0: This is a string no need for quotes
+        key1: "A string in quotes"
+        key2: 'another string in quotes'
+        key3: >
+            This is a multiline string.
+            So you can do as much as you like, as long as it is indented correctly
+        key4: "a string that needs 'escaping' because of the quote around that word"
+        key5: 'a string that needs "escaping" because of the quote around that word'
+        key5: "a string that needs escaping because of the last character :"
+        key6: "a string that needs escaping because of the last characer ,"
+        key7: "a string that needs escaping because of the last character ,"
+        key8: >
+            The multiline string can have 'all' the "crazy" characters it wants ::: ,,, !!!
+    
+
+* Basic nesting:
+
+        id: # A map of main attributes (This is a comment)
+            name: Rodimus Prime
+            race: Autobot
+        enemies: # A list of enemies. 
+            - Megatron
+            - Unicron
+        friends: # A lists of maps of friend attribues!
+            - name: Ironhide
+              race: Autobot
+            - name: Daniel
+              race: Human
+
 Technology used
 ---------------
 * [Twitter Bootstrap][bootstrap]
