@@ -40,10 +40,13 @@ $(window).bind("load", function() {
     }
     // look for an anchor and scroll to it
     // eg 'interfacezero/#trigger_finger-skills'
-    var href = window.location.hash.substring(1);
-    $('html, body').animate({
-        scrollTop: $( $.attr(this, href) ).offset().top
-    }, 500);
+    // USe a try catch, if there is no anchor, the property 'top' isn't there.
+    try{
+        var href = window.location.hash.substring(1);
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, href) ).offset().top
+        }, 500);
+    } catch(err) {}
     // Register hack to stop the non-mobile view closing the drop downs.
     // http://stackoverflow.com/a/20644950/66003
     // http://jsfiddle.net/yq7c4/8/
