@@ -150,7 +150,7 @@ function skillEntry(name, key, value, id, anchor) {
   }
   x += '        <a data-toggle="collapse" data-parent="#"' + id + '"" href="#' +
     anchor + '">';
-  x += title(key);
+  x += title(key) + '<b class="caret"></b>';
   x += '        <span class="badge btn pull-right">' + value["value"] +
     '</span>';
   x += '        </a>';
@@ -364,7 +364,7 @@ function spendingEntry(key, value, id, anchor) {
   x += '        <a data-toggle="collapse" data-parent="#"' + id + '"" href="#' +
     anchor + '">';
   x += '          <span class="glyphicon glyphicon-th-list"></span>&nbsp' +
-    title(key);
+    title(key) + '<b class="caret"></b>';
   x += '        </a>';
   x += '      </h4>';
   x += '    </div>';
