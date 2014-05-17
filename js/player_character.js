@@ -52,7 +52,7 @@ function identification(name, myJ) {
   ], myJ["stats"]["xp"]);
   x += '&nbsp';
   x += makeModal(name + "-backstory", characterName + "'s Backstory",
-    "btn-default", "xs", myJ["id"]["name"] + "'s Backstory", myJ["id"][
+    "btn-default", "xs", getCharacterName(myJ) + "'s Backstory", myJ["id"][
       "backstory"
     ]);
   x += '</p>'
