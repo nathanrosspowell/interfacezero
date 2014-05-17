@@ -4,58 +4,58 @@
 // Currently using the YAML file name is working well.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function characterId(name) {
-    return name + "-character";
+  return name + "-character";
 }
 
 function skillsId(name) {
-    return name + "-skills";
+  return name + "-skills";
 }
 
 function identificationId(name) {
-    return name + "-stats";
+  return name + "-stats";
 }
 
 function tapId(name) {
-    return name + "-tap";
+  return name + "-tap";
 }
 
 function edgesId(name) {
-    return name + "-edges";
+  return name + "-edges";
 }
 
 function armamentsId(name) {
-    return name + "-armaments";
+  return name + "-armaments";
 }
 
 function augmentationsId(name) {
-    return name + "-augmentations";
+  return name + "-augmentations";
 }
 
 function gearId(name) {
-    return name + "-gear";
+  return name + "-gear";
 }
 
 function protectionId(name) {
-    return name + "-protection";
+  return name + "-protection";
 }
 
 function spendingId(name) {
-    return name + "-spending";
+  return name + "-spending";
 }
 
 function notesId(name) {
-    return name + "-notes";
+  return name + "-notes";
 }
 
 function contactsId(name) {
-    return name + "-contacts";
+  return name + "-contacts";
 }
 
 function powersId(name) {
-    return name + "-powers";
+  return name + "-powers";
 }
 
 function vehiclesId(name) {
-    return name + "-vehicles";
+  return name + "-vehicles";
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
