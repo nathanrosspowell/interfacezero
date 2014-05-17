@@ -143,13 +143,13 @@ function skillEntry(name, key, value, id, anchor) {
   x += '  <div class="panel panel-default">';
   x += '    <div class="panel-heading">';
   x += '      <h4 class="panel-title">';
-  x += '        <span class="glyphicon glyphicon-stats"></span>&nbsp'
   if (value["info"] !== 'undefined' && value["info"] != null) {
     x += makeInfoModal(name + "-modal-" + key, title(key), value["info"]) +
       '&nbsp';
   }
   x += '        <a data-toggle="collapse" data-parent="#"' + id + '"" href="#' +
     anchor + '">';
+  x += '        <span class="glyphicon glyphicon-stats"></span>&nbsp'
   x += title(key) + '<b class="caret"></b>';
   x += '        <span class="badge btn pull-right">' + value["value"] +
     '</span>';
