@@ -3,7 +3,9 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~id
 id:
-    name: Samson '<i>Silverbeard</i>' Huurt
+    firstname: Samson
+    nickname: Silverbeard
+    lastname: Huurt
     race: Human
     occupation: Bodyguard
     backstory: >
