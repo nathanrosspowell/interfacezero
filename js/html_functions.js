@@ -70,7 +70,7 @@ function getCharacterName( myJ ){
     x += ' ' + myJ["id"]["lastname"];
     return x;
 }
-function shortName( myJ ){
+function getCharacterShortName( myJ ){
     if ( isValid( myJ["id"]["nickname"]))
     {
         return myJ["id"]["nickname"];
