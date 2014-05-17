@@ -27,6 +27,7 @@ How to edit YAML
 ----------------
 [YAML][yaml] is a human friendly data serialization standard for all programming languages.
 YAML files use significant whitespace (much like the Python programming language) to group data together. The main notations to recognise are:
+
 * A map:
 
         key: 1
