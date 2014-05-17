@@ -235,7 +235,7 @@ function createCharacterPanel( name, myJ ){
     x += '    </h3>';
     x += '  </div>'; // Close panel-heading
     x += '  <div class="panel-body">';
-    x +=        identification( name, myJ, characterName );
+    x +=        identification( name, myJ );
     x += '      <hr/>';
     x +=        tap( name, myJ );
     x += '      <hr/>';
@@ -265,15 +265,16 @@ function createCharacterPanel( name, myJ ){
     return x;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function identification( name, myJ, characterName ){
+function identification( name, myJ ){
     var map = myJ["stats"];
+    var characterName = getCharacterShortName(myJ);
     var x = "";
     x += '<a class="anchor" id="' + identificationId( name ) +'"></a>';
     x+= '<p>';
     x += makeCharacterDescription(characterName,myJ["id"]["race"],myJ["id"]["occupation"],myJ["stats"]["xp"]); 
     x+= '&nbsp';
     x += makeModal(name+"-backstory"
-        , getCharacterShortName(myJ)+"'s Backstory"
+        , characterName+"'s Backstory"
         , "btn-default"
         , "xs"
         , myJ["id"]["name"]+"'s Backstory"
