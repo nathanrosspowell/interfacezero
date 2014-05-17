@@ -6,6 +6,11 @@ from functools import partial
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def get_options():
     opts = jsbeautifier.default_options()
+    opts.indent_size = 2
+    opts.max_preserve_newlines = 0
+    opts.jslint_happy = True
+    opts.eval_code = True
+    opts.wrap_line_length = 79
     return opts
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def beautify_folder(opts,js_dir):
