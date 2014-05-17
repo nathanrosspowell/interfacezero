@@ -1,5 +1,6 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// This is what executes
+// This is what executes once jQuerey is loaded (we do that last).
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $(window).bind("load", function() {
     var errors = "";
     // Loop all of the file names, found in yaml_lists.js
@@ -10,7 +11,7 @@ $(window).bind("load", function() {
             success: function(data) {
                 // Try catch for each playrs yaml
                 try {
-                    addHtmlForYaml(yamlFile, jsyaml.load(data));
+                    makePlayerCharacterHtml(yamlFile, jsyaml.load(data));
                 } catch (err) {
                     // If it's not the first error, add a horizontal rule
                     if (errors !== "") {
