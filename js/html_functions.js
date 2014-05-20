@@ -132,10 +132,9 @@ function makeCharacterDescription(character, race, occupation, xp) {
     [80, "Legendary"]
   ];
   var level = levels[0][1];
-  for (var i = 0; i < levels.length; i++) {
-    if (xp < levels[i][0]) {
+  for (var i = 1; i < levels.length; i++) {
+    if (xp >= levels[i][0]) {
       level = levels[i][1];
-      break;
     }
   }
   var an = "a";
