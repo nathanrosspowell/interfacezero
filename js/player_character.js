@@ -303,9 +303,11 @@ function vehicles(name, myJ) {
       var y = "";
       $.each(myJ["vehicles"], function (index) {
         var map = myJ["vehicles"][index];
-        y += '<tr class="danger">';
-        
-        y += '<tr>';
+        y += '<tr';
+        if (isValid(map["gone"])){  
+            y += 'class="danger style="text-decoration: line-through;"';
+        }
+        y += '>';
         y += '  <td>'
         y += makeInfoModal(name + "-vehicles-" + index, "Vehicles: " + map[
           "name"], map["info"]);
