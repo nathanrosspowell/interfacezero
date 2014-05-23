@@ -58,7 +58,7 @@ skills:
         value: 6
         skills : {}
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~attribuets
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~attributes
 attributes:
     pace: 0
     running: 0
@@ -157,6 +157,7 @@ protection:
 vehicles:
     - name: Harley Motorcycle
       cost: 1000c
+      gone: True
       info: >
         <ul>
         <li><code>1d4</code> driving AI</li>
