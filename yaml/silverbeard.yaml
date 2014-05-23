@@ -31,54 +31,58 @@ stats:
     xp: 13
     wonded: 0
     exhausted: 0
-    money: 8500c
+    money: 8000c
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~skills
 skills:
     agility:
-        value: 6
+        value: 8
         skills:
-            driving: 
-                value: 4
-            lockpicking:
+            fighting: 
+                value: 8
+            shooting:
+                value: 8
+            throwing: 
                 value: 6
-            shooting: 
-                value: 6
-            stealth: 
+            cybermastery: 
                 value: 6
     smarts:
-        value : 8
+        value :  4
         skills:
-            hacking: 
-                value: 10
-            notice: 
-                value: 4
-            streetwise: 
+            investigation: 
                 value: 6
-            programming: 
-                value: 8
-    strength:
+            notice: 
+                value: 6
+    spirit:
         value: 6
         skills: {}
+        
+    strength:
+        value: 8
+        skills:
+            cllimbing:
+                value: 6
     vigor:
         value: 6
-        skills : {}
+        skills :
+            athletics:
+                value: 4
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~attribuets
 attributes:
-    pace: 0
+    pace: 10
     running: 0
-    parry: 2
-    tough: 5
-    armour: 3
+    parry: 6 (7 from Augmented Warrior)
+    tough: 6
+    armour: 4 (5 from subdermal armor)
     charisma: 0
     guts: 0
     armor: 0
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~tap
 tap:
-    firewall: 7
-    toughness: 1
+    firewall: 4
+    toughness: 0
     ams: 0
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~edges
@@ -117,7 +121,7 @@ gear:
         first responders are linked to the “officer down” system, they
         know they need to be ready when it hits the fan. Includes an
         internal communications array, with “officer down” biosensor
-        uplink and shoulder-mount camcorder with uplink." 
+        uplink and shoulder-mount camcorder with uplink. +4 armor" 
     - name: Emergency support patch
       info: +2 to Healing rolls
     
@@ -143,7 +147,7 @@ armaments:
     - name: "HE-40, High Explosive"
       damage: 4d8
       weight: 2
-      quantity: 2
+      quantity: 1
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~augmentations
 augmentations:
@@ -151,7 +155,7 @@ augmentations:
       info: Strength die is raised by 1 type
       strain: 2
     - name: Subdermal Armour
-      info: +1 Toughness
+      info: +1 Armor to all locations
       strain: 1
     - name: cyberlegs; ligament enhancement
       info: Ligament Enhancement adds 4” to the character’s Pace.
@@ -180,6 +184,8 @@ notes:
     Athena:
         - Stopped asssination attempt on Athena at club Seismic.
         - Lost club alot of money.
+    Randy:
+        - Visited Randy, who is a victim of the Basilisk hack, donated 500creds.
         
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
