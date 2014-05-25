@@ -305,7 +305,7 @@ function vehicles(name, myJ) {
         var map = myJ["vehicles"][index];
         y += '<tr';
         if (typeof map["gone"] !== 'undefined'){  
-            y += 'class="danger" style="text-decoration: line-through;"';
+            y += ' class="danger" ';
         }
         y += '>';
         y += '  <td>'
