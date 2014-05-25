@@ -304,7 +304,7 @@ function vehicles(name, myJ) {
       $.each(myJ["vehicles"], function (index) {
         var map = myJ["vehicles"][index];
         y += '<tr';
-        if (isValid(map["gone"])){  
+        if (map["gone"]!=='undefined' && map["gone"] == true){  
             y += 'class="danger style="text-decoration: line-through;"';
         }
         y += '>';
