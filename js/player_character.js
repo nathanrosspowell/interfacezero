@@ -47,7 +47,7 @@ function identification(name, myJ) {
   var x = "";
   x += '<a class="anchor" id="' + identificationId(name) + '"></a>';
   x += '<p>';
-  x += makeCharacterDescription(characterName, myJ["id"]["race"], myJ["id"][
+  x += makeCharacterDescription(characterNamve, myJ["id"]["race"], myJ["id"][
     "occupation"
   ], myJ["stats"]["xp"]);
   x += '&nbsp';
@@ -311,19 +311,14 @@ function vehicles(name, myJ) {
         y += '>';
         
         y += '  <td>';
-        if (gone){
-          y += '<del>';
-        }
-        y += makeInfoModal(name + "-vehicles-" + index, "Vehicles: " + map[
-          "name"], map["info"]);
-        if (gone){
-          y += '</del>';
-        }
+        y += makeInfoModal(name + "-vehicles-" + index
+                          , "Vehicles: " + map["name"]
+                          , map["info"]);
         y += '  </td>'
         
         y += '  <td>' 
         if (gone) {
-          y += '</del>';
+          y += '<del>';
         }
         y += map["name"];
         if (gone){
@@ -333,7 +328,7 @@ function vehicles(name, myJ) {
       
         y += '  <td>' 
         if (gone) {
-          y += '</del>';
+          y += '<del>';
         }
         if (typeof map["quantity"] !== 'undefined') {
           y += map["quantity"];
@@ -347,7 +342,7 @@ function vehicles(name, myJ) {
 
         y += '  <td>' 
         if (gone) {
-          y += '</del>';
+          y += '<del>';
         }
         if (typeof map["cost"] !== 'undefined') {
           y += map["cost"];
