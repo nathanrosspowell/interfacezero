@@ -304,15 +304,17 @@ function vehicles(name, myJ) {
       $.each(myJ["vehicles"], function (index) {
         var map = myJ["vehicles"][index];
         var gone = typeof map["gone"] !== 'undefined' && map["gone"] === true;
+        var modalTitle = "Vehicles: " + map["name"];
         y += '<tr';
         if (gone){  
             y += ' class="danger" ';
+            modalTitle += " - <strong>Gone!</strong>"
         }
         y += '>';
         
         y += '  <td>';
         y += makeInfoModal(name + "-vehicles-" + index
-                          , "Vehicles: " + map["name"]
+                          , 
                           , map["info"]);
         y += '  </td>'
         
