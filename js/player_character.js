@@ -302,25 +302,62 @@ function vehicles(name, myJ) {
     x += makeTable(["", "Name", "Quantity", "Cost"], function () {
       var y = "";
       $.each(myJ["vehicles"], function (index) {
+        var gone = typeof map["gone"] !== 'undefined' && map["gone"] === true;
         var map = myJ["vehicles"][index];
         y += '<tr';
-        if (typeof map["gone"] !== 'undefined'){  
+        if (gone){  
             y += ' class="danger" ';
         }
         y += '>';
-        y += '  <td>'
+        
+        y += '  <td>';
+        if (gone){
+          y += '<del>';
+        }
         y += makeInfoModal(name + "-vehicles-" + index, "Vehicles: " + map[
           "name"], map["info"]);
+        if (gone){
+          y += '</del>';
+        }
         y += '  </td>'
-        y += '  <td>' + map["name"] + '</td>';
+        
+        y += '  <td>' 
+        if (gone) {
+          y += '</del>';
+        }
+        y += map["name"];
+        if (gone){
+          y += '</del>';
+        }
+        y += '</td>';
+      
+        y += '  <td>' 
+        if (gone) {
+          y += '</del>';
+        }
         if (typeof map["quantity"] !== 'undefined') {
-          y += '  <td>' + map["quantity"] + '</td>';
+          y += map["quantity"];
         } else {
-          y += '  <td>' + '1' + '</td>';
+          y += '1';
+        }
+        if (gone){
+          y += '</del>';
+        }
+        y += '</td>';
+
+        y += '  <td>' 
+        if (gone) {
+          y += '</del>';
         }
         if (typeof map["cost"] !== 'undefined') {
-          y += '  <td>' + map["cost"] + '</td>';
+          y += map["cost"];
         }
+        if (gone){
+          y += '</del>';
+        }
+        y += '</td>';
+
+
         y += '</tr>';
       });
       return y;
