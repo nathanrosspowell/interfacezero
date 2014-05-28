@@ -302,7 +302,7 @@ function vehicles(name, myJ) {
     x += makeTable(["", "Name", "Quantity", "Cost"], function () {
       var y = "";
       $.each(myJ["vehicles"], function (index) {
-        var gone = typeof map["gone"] !== 'undefined' && map["gone"] === true;
+        var gone = typeof map["gone"] !== 'undefined';
         var map = myJ["vehicles"][index];
         y += '<tr';
         if (gone){  
