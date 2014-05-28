@@ -47,7 +47,7 @@ function identification(name, myJ) {
   var x = "";
   x += '<a class="anchor" id="' + identificationId(name) + '"></a>';
   x += '<p>';
-  x += makeCharacterDescription(characterNamve, myJ["id"]["race"], myJ["id"][
+  x += makeCharacterDescription(characterName, myJ["id"]["race"], myJ["id"][
     "occupation"
   ], myJ["stats"]["xp"]);
   x += '&nbsp';
