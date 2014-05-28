@@ -308,13 +308,13 @@ function vehicles(name, myJ) {
         y += '<tr';
         if (gone){  
             y += ' class="danger" ';
-            modalTitle += " - <strong>Gone!</strong>"
+            modalTitle += " - <strong>Gone!</strong>";
         }
         y += '>';
         
         y += '  <td>';
         y += makeInfoModal(name + "-vehicles-" + index
-                          , 
+                          , modalTitle
                           , map["info"]);
         y += '  </td>'
         
