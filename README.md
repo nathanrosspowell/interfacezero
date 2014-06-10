@@ -84,4 +84,4 @@ Technology used
 [bootstrap]: https://github.com/twbs/bootstrap
 [jsyaml]: https://github.com/nodeca/js-yaml
 [nathan]: http://nathanrosspowell.com/about_me/ "Link to personal email"
-[website]: http://nathanrosspowell.com/interfacezero/
+[website]: http://nathanrosspowell.github.io/interfacezero/
