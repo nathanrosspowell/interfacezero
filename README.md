@@ -75,6 +75,7 @@ Technology used
 ---------------
 * [Twitter Bootstrap][bootstrap]
 * [js-yaml][jsyaml]
+* [jQuery][jq]
 
 [interfacezero]: http://rpg.drivethrustuff.com/product/124685/Interface-Zero-20-Full-Metal-Cyberpunk "Interface Zero homepage"
 [yaml]: http://yaml.org/ "YAML specification"
@@ -85,3 +86,4 @@ Technology used
 [jsyaml]: https://github.com/nodeca/js-yaml
 [nathan]: http://nathanrosspowell.com/about_me/ "Link to personal email"
 [website]: http://nathanrosspowell.github.io/interfacezero/
+[jq]: http://jquery.com/
