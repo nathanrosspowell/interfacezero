@@ -20,7 +20,7 @@ stats:
         current: 2
         max: 3
     xp: 13
-    wonded: -2
+    wonded: 0
     exhausted: 0
     money: 6350c
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,7 +58,7 @@ skills:
         value: 6
         skills : {}
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~attribuets
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~attributes
 attributes:
     pace: 0
     running: 0
@@ -157,6 +157,7 @@ protection:
 vehicles:
     - name: Harley Motorcycle
       cost: 1000c
+      gone: True
       info: >
         <ul>
         <li><code>1d4</code> driving AI</li>
