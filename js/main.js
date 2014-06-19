@@ -29,6 +29,9 @@ $(window).bind("load", function () {
       }
     });
   });
+  // Add dropdown menu.
+  var menuLink = '<li class="dropdown"><a href="#interfacezero-credits">Credits</a></li>';
+  $("#scrollspy-navbar").append(menuLink);
   // Offset the scrolling to accomadate the fixed menu bar.
   $('body').scrollspy({
     offset: 120
@@ -58,6 +61,11 @@ $(window).bind("load", function () {
       .length) {
       $('.navbar-collapse').collapse('toggle');
     }
+  });
+  // Add github contributors.
+  var nrp = new Gh3.User("nathanrosspowell");
+  var iZero = new Gh3.Repository("interfacezero", nrp);
+  iZero.fetch(function(err,res){
   });
 });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

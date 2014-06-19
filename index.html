@@ -52,7 +52,12 @@
               <!-- html_functions.js:createCharacterDropdown populates this -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./"><span class="glyphicon glyphicon-refresh"></a></li>
+            <li class="">
+                <a title="Nathan's home page" href="http://nathanrosspowell.com">
+                    <span class="glyphicon glyphicon-home"/>
+                </a>
+            </li>
+            <li class="active"><a href="./"><span class="glyphicon glyphicon-refresh"/></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -81,9 +86,24 @@
     </div> <!-- /container -->
     
     <div class="container" id="interfacezero-main"></div>
-    
+
     <div class="container" id="interfacezero-credits">
-       <div class="github-widget" data-repo="nathanrosspowell/interfacezero"></div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Credits
+                </h3>
+            </div>
+
+            <div id="interfacezero-contributors"></div>
+            <script>
+
+            </script>
+
+            <div class="panel-body">
+                <div class="github-widget" data-repo="nathanrosspowell/interfacezero"></div>
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript
@@ -91,8 +111,10 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script type="text/javascript" src="js/vendor/jquery.githubRepoWidget.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.githubRepoWidget.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/gh3.js"></script>
     <script type="text/javascript" src="js/yaml_lists.js"></script>
     <script type="text/javascript" src="js/id.js"></script>
     <script type="text/javascript" src="js/html_functions.js"></script>
